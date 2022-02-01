@@ -1,9 +1,8 @@
+import { Tabs } from "@mui/material";
 
+const TabBar = () => {
+  return <Tabs>
+  </Tabs>;
+};
 
-const Tab = ()=> {
-  return <>
-
-  </>
-}
-
-export default Tab;
+export default TabBar;

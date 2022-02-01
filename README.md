@@ -1,70 +1,75 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+### getting start:
+```
+yarn start
+```
 
-### `yarn start`
+### testing app:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+``` 
+yarn test
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### build app:
+```
+yarn build
+````
 
-### `yarn test`
+# components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Button.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### To send data to the button you must send an object to the Button component with key Info as props like this:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+<Buttons Info={nameYourObject}>
+```
 
-### `yarn eject`
+### property you can send:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### routeButton:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### if you want have Link from react-router-dom you should pass route to this property and your route must be **String**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### **Note:** you must choose (typeButton.linkButton) to true and if you don't send route as props your default will be homePage("/") if you don't want to go to homePage don't change route to null because make for you bug
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### nameButton:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### this is for define your name button and your data must be **String**.
 
-### Code Splitting
+### colorButton:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### you can choose some customized colors for buttons. if you want to define the specific color you should define (sx) property.
 
-### Analyzing the Bundle Size
+- colors
+  - primary
+  - secondary
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### typeButton:
 
-### Making a Progressive Web App
+#### this property specifies your type button.it is an object with 3 keys:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+typeButton:{
+   linkButton:true,
+   button:"submit"||"button",
 
-### Advanced Configuration
+}
+# linkButton must be  boolean
+# button must be string and have two property
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+#### **Note:** if you don`t specify your type button your button will be simple button with type button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+**Note:** You must send style as props if you don't send style as props you will get an error because in **Link Button** style destructure from**Info**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### eventButton:
+#### this property accept a function
