@@ -1,0 +1,16 @@
+{
+  "logoWebsite":{
+    "srcLogo": "../images/apsLogo2.jpg ",
+    "alt": "APSignals"
+  },
+  "routes":[
+    {
+      "nameRoute": "Home",
+      "route": "/"
+    },
+    {
+      "nameRoute": "AboutUs",
+      "route": "/aboutUs"
+    }
+  ]
+}
