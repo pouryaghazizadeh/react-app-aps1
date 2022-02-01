@@ -1,76 +1,79 @@
-import Navbar from "./components/navbar/Navbar";
 import { ThemeProvider } from "@mui/private-theming";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 import theme from "./constants/theme";
-const  App=()=> {
+const App = () => {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-        <div>hgu</div>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+          <div>hgu</div>
+        </ThemeProvider>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
