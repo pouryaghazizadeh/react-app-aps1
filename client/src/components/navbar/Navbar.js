@@ -25,12 +25,13 @@ export const navbarStyle = makeStyles((theme) => {
       borderTop: "1px solid",
       [theme.breakpoints.up("xs")]: {
         display: "none",
-        background:"green"
+        // background:"green"
 
       },
       [theme.breakpoints.up("md")]: {
         display: "flex",
-        justifyContent:"center",
+        // justifyContent:"center",
+        // alignItems:"center",
         height: "30px"
 
             },
@@ -73,7 +74,7 @@ const Navbar = () => {
         </Toolbar>
         <Toolbar
           component="nav"
-          // className={useStyle.secondNav}
+          className={useStyle.secondNav}
           sx={{ display: { xs: "none", sm: "block" } }}
         >
           {headerData.routes.map((value, i) => {
