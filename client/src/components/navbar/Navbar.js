@@ -29,7 +29,7 @@ export const navbarStyle = makeStyles((theme) => {
 
       },
       [theme.breakpoints.up("md")]: {
-        display: "flex",
+        display:"flex",
         // justifyContent:"center",
         // alignItems:"center",
         height: "30px"
