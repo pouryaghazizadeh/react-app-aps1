@@ -1,9 +1,9 @@
 {
-  "logoWebsite":{
+  "logoWebsite": {
     "srcLogo": "../images/apsLogo.jpg ",
     "alt": "APSignals"
   },
-  "routes":[
+  "routes": [
     {
       "nameRoute": "Home",
       "route": "/"
