@@ -1,19 +1,17 @@
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
-  Toolbar,
+  IconButton,
   Menu,
   MenuItem,
-  IconButton,
+  Toolbar,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import React, { useState } from "react";
 import headerData from "../../constants/headerData.json";
-import MenuIcon from "@mui/icons-material/Menu";
 import Buttons from "../button/Button";
-import { useState } from "react";
 export const navbarStyle = makeStyles((theme) => {
-  console.log(theme.breakpoints);
   return {
     header: {
       [theme.breakpoints.up("xs")]: {
@@ -42,10 +40,8 @@ export const navbarStyle = makeStyles((theme) => {
     logo: {
       height: "60px",
       width: "70px",
-      // background: "blue",
     },
     containerMenuMobile: {
-      
       [theme.breakpoints.up("xs")]: {
         display: "flex",
       },
@@ -56,15 +52,23 @@ export const navbarStyle = makeStyles((theme) => {
   };
 });
 const Navbar = () => {
-   const [anchorElNav, setAnchorElNav] = useState(null);
-   // handle open menu in mobile screen
-   const handleOpenNavMenu = (event) => {
-     setAnchorElNav(event.currentTarget);
-   };
-   // handle close menu in mobile screen
-   const handleCloseNavMenu = () => {
-     setAnchorElNav(null);
-   };
+  const [anchorElNav, setAnchorElNav] = useState(null);
+
+  // handle open menu in mobile screen
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  // handle close menu in mobile screen
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const [alignment, setAlignment] = React.useState("left");
+
+  const handleAlignment = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+
   const useStyle = navbarStyle();
   return (
     <>
@@ -108,14 +112,14 @@ const Navbar = () => {
               className={useStyle.menuStyle}
             >
               {headerData.routes.map((value, index) => {
-               const { nameRoute, route } = value;
-               const dataBtn = {
-                 routeButton: route,
-                 nameButton: nameRoute,
-                 typeButton: {
-                   linkButton: true,
-                 },
-               };
+                const { nameRoute, route } = value;
+                const dataBtn = {
+                  routeButton: route,
+                  nameButton: nameRoute,
+                  typeButton: {
+                    linkButton: true,
+                  },
+                };
                 return (
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <Buttons Info={dataBtn} />
@@ -139,6 +143,7 @@ const Navbar = () => {
               typeButton: {
                 linkButton: true,
               },
+              activeStyle:true
             };
 
             return <Buttons key={i} Info={dataBtn} />;

@@ -70,3 +70,7 @@ typeButton:{
 ### eventButton:
 
 #### this property accept a function
+
+
+### activeStyle
+####  default is null but if you want to have the active style you can pass it a true and when the button is active you will have border-bottom
