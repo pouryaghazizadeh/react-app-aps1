@@ -21,7 +21,6 @@ const Buttons = ({ Info }) => {
     typeButton,
     eventButton,
     activeStyle
-
   } = Info;
 
   const useStyle = ButtonStyle();
