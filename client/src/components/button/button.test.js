@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import TestRenderer from "react-test-renderer";
 import Button from "./Button";
-
 const propsButton = {
   colorButton: "primary",
   nameButton: "click",

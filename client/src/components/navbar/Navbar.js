@@ -20,8 +20,7 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     firstNav: {
-      [theme.breakpoints.up("xs")]: {},
-      [theme.breakpoints.up("md")]: {},
+   
     },
     secondNav: {
       [theme.breakpoints.up("xs")]: {
@@ -63,12 +62,7 @@ const Navbar = () => {
     setAnchorElNav(null);
   };
 
-  const [alignment, setAlignment] = React.useState("left");
-
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
-
+ 
   const useStyle = navbarStyle();
   return (
     <>
@@ -81,9 +75,7 @@ const Navbar = () => {
               className={useStyle.logo}
             />
           </Box>
-          {/* <Box component="section" className={useStyle.containerIcon} >
-            <MenuIcon fontSize="large" />
-          </Box> */}
+       
           <Box className={useStyle.containerMenuMobile}>
             <IconButton
               size="large"
