@@ -19,17 +19,17 @@ export const navbarStyle = makeStyles((theme) => {
         justifyContent: "center",
       },
     },
-    firstNav: {
-   
-    },
+    firstNav: {},
     secondNav: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      // background: "red",
+      borderTop:"1px solid gray",
       [theme.breakpoints.up("xs")]: {
         display: "none",
       },
-      [theme.breakpoints.up("md")]: {
-        display: "flex",
-        justifyContent: "center",
-      },
+     
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -44,7 +44,7 @@ export const navbarStyle = makeStyles((theme) => {
       [theme.breakpoints.up("xs")]: {
         display: "flex",
       },
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         display: "none",
       },
     },
@@ -62,7 +62,6 @@ const Navbar = () => {
     setAnchorElNav(null);
   };
 
- 
   const useStyle = navbarStyle();
   return (
     <>
@@ -75,7 +74,7 @@ const Navbar = () => {
               className={useStyle.logo}
             />
           </Box>
-       
+
           <Box className={useStyle.containerMenuMobile}>
             <IconButton
               size="large"
@@ -125,7 +124,7 @@ const Navbar = () => {
         <Toolbar
           component="nav"
           className={useStyle.secondNav}
-          sx={{ display: { xs: "none", sm: "block" } }}
+          // sx={{ display: { xs: "none", sm: "block" } }}
         >
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;
@@ -135,7 +134,7 @@ const Navbar = () => {
               typeButton: {
                 linkButton: true,
               },
-              activeStyle:true
+              activeStyle: true,
             };
 
             return <Buttons key={i} Info={dataBtn} />;
