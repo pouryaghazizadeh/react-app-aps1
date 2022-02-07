@@ -33,20 +33,17 @@ export const style = makeStyles((theme) => {
   };
 });
 const Dot = ({ Info }) => {
-  const { dataSlider, current} = Info;
+  const { dataSlider, current } = Info;
 
   const useStyle = style();
   return (
     <Box component="div" className={useStyle.containerDot}>
       {dataSlider.map((value, index) => {
-
         return (
           <Box
             component="div"
             key={index}
             className={index === current ? useStyle.active : useStyle.disable}
-          
-           
           ></Box>
         );
       })}
