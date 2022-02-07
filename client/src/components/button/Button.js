@@ -1,4 +1,4 @@
-import makeStyles from "@material-ui/styles/makeStyles";
+import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 
