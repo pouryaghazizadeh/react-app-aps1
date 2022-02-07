@@ -21,15 +21,15 @@ export const navbarStyle = makeStyles((theme) => {
     },
     firstNav: {},
     secondNav: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      // background: "red",
-      borderTop:"1px solid gray",
       [theme.breakpoints.up("xs")]: {
         display: "none",
       },
-     
+      [theme.breakpoints.up("sm")]: {
+        borderTop: "1px solid gray",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      },
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -122,7 +122,7 @@ const Navbar = () => {
         </Toolbar>
 
         <Toolbar
-          component="nav"
+          component="div"
           className={useStyle.secondNav}
           // sx={{ display: { xs: "none", sm: "block" } }}
         >
