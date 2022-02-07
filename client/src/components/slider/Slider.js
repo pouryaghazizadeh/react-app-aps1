@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import Dot from "../dot/Dot";
 
 export const sliderStyle = makeStyles((theme) => {
   return {
@@ -24,7 +25,7 @@ export const sliderStyle = makeStyles((theme) => {
         width: "100%",
       },
       [theme.breakpoints.up("sm")]: {
-        width: "90%",
+        width: "100%",
       },
     },
     imageSlider: {
@@ -32,23 +33,54 @@ export const sliderStyle = makeStyles((theme) => {
       height: "100%",
       zIndex: "6",
     },
-    iconLeft: {
+    containerArrowLeft: {
+      width: "45px",
+      height: "45px",
+      background: "#fff",
+      borderRadius: "100px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
       position: "absolute",
-      top: "50%",
-      left: "0",
-      color: "#000",
       zIndex: "10",
+      top: "50%",
       cursor: "pointer",
+      paddingLeft: "4px",
+      [theme.breakpoints.up("xs")]: {
+        left: "0",
+      },
+      [theme.breakpoints.up("sm")]: {
+        left: "7px",
+      },
+    },
+    iconLeft: {
+      color: "#000",
       userSelect: "none",
     },
-    iconRight: {
+    containerArrowRight: {
+      width: "45px",
+      height: "45px",
+      background: "#fff",
+      borderRadius: "100px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: "10",
       position: "absolute",
       top: "50%",
-      color: "#000",
-      zIndex: "10",
+
       cursor: "pointer",
+      paddingRight: "3px",
+      [theme.breakpoints.up("xs")]: {
+        right: "0",
+      },
+      [theme.breakpoints.up("sm")]: {
+        right: "7px",
+      },
+    },
+    iconRight: {
+      color: "#000",
       userSelect: "none",
-      right: "0",
     },
   };
 });
@@ -66,7 +98,7 @@ const Slider = ({ dataSlider }) => {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-  console.log(dataSlider);
+
   // check data dont be empty and be an array
   if (!Array.isArray(dataSlider) || dataSlider.length <= 0) {
     return null;
@@ -74,11 +106,13 @@ const Slider = ({ dataSlider }) => {
   return (
     <Box component="section" className={useStyle.containerSlider}>
       {/* icon prev */}
-      <ArrowBackIosIcon
-        className={useStyle.iconLeft}
-        onClick={prevSlide}
-        fontSize="large"
-      />
+      <Box className={useStyle.containerArrowLeft}>
+        <ArrowBackIosIcon
+          className={useStyle.iconLeft}
+          onClick={prevSlide}
+          fontSize="large"
+        />
+      </Box>
       {/* map on data */}
       {dataSlider.map((value, index) => {
         return (
@@ -88,21 +122,27 @@ const Slider = ({ dataSlider }) => {
             className={useStyle.containerImage}
           >
             {index === current && (
-              <img
-                src={value.url}
-                alt={value.alt}
-                className={useStyle.imageSlider}
-              />
+              <>
+                <img
+                  src={value.url}
+                  alt={value.alt}
+                  className={useStyle.imageSlider}
+                />
+                <Dot Info={{dataSlider, current}} />
+              </>
             )}
           </Box>
         );
       })}
+
       {/* icon next */}
-      <ArrowForwardIosIcon
-        className={useStyle.iconRight}
-        onClick={nextSlide}
-        fontSize="large"
-      />
+      <Box className={useStyle.containerArrowRight}>
+        <ArrowForwardIosIcon
+          className={useStyle.iconRight}
+          onClick={nextSlide}
+          fontSize="large"
+        />
+      </Box>
     </Box>
   );
 };
