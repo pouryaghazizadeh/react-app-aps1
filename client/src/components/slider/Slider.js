@@ -128,7 +128,7 @@ const Slider = ({ dataSlider }) => {
                   alt={value.alt}
                   className={useStyle.imageSlider}
                 />
-                <Dot Info={{dataSlider, current}} />
+                <Dot Info={{ dataSlider, current}} />
               </>
             )}
           </Box>
