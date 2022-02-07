@@ -65,7 +65,7 @@ const Navbar = () => {
   const useStyle = navbarStyle();
   return (
     <>
-      <AppBar color="default" className={useStyle.header}>
+      <AppBar color="default" className={useStyle.header} position="sticky">
         <Toolbar component="nav">
           <Box flexGrow={2}>
             <img
