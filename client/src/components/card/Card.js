@@ -1,9 +1,7 @@
 import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
+    Card, CardContent,
+    CardMedia,
+    Typography
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
  export const cardStyle = makeStyles((theme) => {
@@ -16,11 +14,24 @@ import { makeStyles } from "@mui/styles";
      },
    };
  });
-const Cards = () => {
-      const useStyles = cardStyle();
-  return <Card>
+const Cards = ({Info}) => {
+     const { imageUrl, titleCard, descriptionCard } = Info;
+const useStyles = cardStyle();
+  return (
+    <Card className={useStyles.containerPage}>
+      <CardMedia
+        component="img"
+        height="180"
+        src={imageUrl && imageUrl}
+        alt={titleCard && titleCard}
+      />
+      <CardContent>
+        {titleCard && <Typography component="h4">{titleCard}</Typography>}
 
-  </Card>
+        {descriptionCard && <Typography>{descriptionCard}</Typography>}
+      </CardContent>
+    </Card>
+  );
 };
 
 export default Cards;
