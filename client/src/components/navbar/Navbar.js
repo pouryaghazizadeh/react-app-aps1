@@ -21,9 +21,9 @@ export const navbarStyle = makeStyles((theme) => {
     },
     firstNav: {},
     secondNav: {
-      [theme.breakpoints.up("xs")]: {
-        display: "none",
-      },
+      // [theme.breakpoints.up("xs")]: {
+      //   display: "none",
+      // },
       [theme.breakpoints.up("sm")]: {
         borderTop: "1px solid gray",
         display: "flex",
@@ -121,11 +121,10 @@ const Navbar = () => {
           </Box>
         </Toolbar>
 
-        <Toolbar
-          component="div"
-          className={useStyle.secondNav}
-        
-        >
+        <Toolbar component="div"
+         className={useStyle.secondNav}
+
+         >
           {/* button desktop */}
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;

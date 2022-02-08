@@ -87,6 +87,8 @@ export const sliderStyle = makeStyles((theme) => {
       color: "#fff",
       position: "absolute",
       bottom: "15%",
+      textAlign:"center"
+      
     },
   };
 });
@@ -140,9 +142,9 @@ const Slider = ({ dataSlider }) => {
                     variant="h4"
                     className={useStyle.textSlider}
                   >
-                    {value.desc}
+                    {/* {value.desc} */}
                   
-                    {/* چراغی را که ایزد برفروزد / هر آنکس پف کند ریشه اش بسوزد... */}
+                    ...چراغی را که ایزد برفروزد / هر آنکس پف کند ریشه اش بسوزد
                   </Typography>
                 )}
               </>
