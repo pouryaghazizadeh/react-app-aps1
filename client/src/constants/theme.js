@@ -8,10 +8,15 @@ const theme = createTheme({
       lg: 1200,
       xl: 1536,
     },
-    palette: {
-      primary: {
-        main: "#0047AB",
-      },
+  },
+  palette: {
+    primary: {
+      main: "#0047AB",
+    },
+  },
+  typography:{
+    button:{
+      textTransform: "none",
     },
   },
 });

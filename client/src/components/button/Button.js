@@ -1,14 +1,17 @@
-import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { NavLink as RouterLink } from "react-router-dom";
 
 export const ButtonStyle = makeStyles({
   button: {
-    
-    "&.active":{
-      borderRadius:"0",
-      borderBottom:"1px solid blue"
-    }
+    "&.active": {
+      borderRadius: "0",
+      borderBottom: "1px solid blue",
+      fontSize: "0.875rem",
+    },
+  },
+  default: {
+    textTransform: "none",
   },
 });
 
@@ -20,14 +23,13 @@ const Buttons = ({ Info }) => {
     routeButton,
     typeButton,
     eventButton,
-    activeStyle
+    activeStyle,
   } = Info;
 
   const useStyle = ButtonStyle();
   return (
     <Button
       component={typeButton.linkButton ? RouterLink : "/"}
-      // sx={costumeStyle ? costumeStyle : null}
       // check type if type be true pass data(button/submit) in the else check button component have props (typeButton.linkButton) if it is true your button will be link type(RouterLink) if it is false  your button will be type button
       type={
         typeButton.button
@@ -39,7 +41,8 @@ const Buttons = ({ Info }) => {
       to={typeButton.linkButton ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
-      className={activeStyle? useStyle.button:null}
+      className={activeStyle ? useStyle.button  : useStyle.default}
+      classes={{textTransform:"none"}}
     >
       {nameButton}
     </Button>

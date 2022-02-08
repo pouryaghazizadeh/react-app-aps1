@@ -18,7 +18,7 @@ export const sliderStyle = makeStyles((theme) => {
     },
     containerImage: {
       position: "absolute",
-      height: "100%",
+      height: "90%",
       display: "flex",
       justifyContent: "center",
       [theme.breakpoints.up("xs")]: {
@@ -128,13 +128,13 @@ const Slider = ({ dataSlider }) => {
                   alt={value.alt}
                   className={useStyle.imageSlider}
                 />
-                <Dot Info={{ dataSlider, current}} />
+                {/* dot slider */}
               </>
             )}
           </Box>
         );
       })}
-
+      <Dot Info={{ dataSlider, current }} />
       {/* icon next */}
       <Box className={useStyle.containerArrowRight}>
         <ArrowForwardIosIcon
