@@ -4,22 +4,22 @@
     {
       "id": 1,
       "text": "Full Stack",
-      "imageUrl": "./APSCode.jpg"
+      "imageUrl": "../images/APSCode.jpg"
     },
     {
       "id": 2,
       "text": "English Class",
-      "imageUrl": "./APSEnglish.jpg"
+      "imageUrl": "../images/APSEnglish.jpg"
     },
     {
       "id": 3,
       "text": "soft Skill",
-      "imageUrl": "./APSDNA.jpg"
+      "imageUrl": "../images/APSDNA.jpg"
     },
     {
       "id": 4,
       "text": "amplifier",
-      "imageUrl": "./P.jpg"
+      "imageUrl": "../images/P.jpg"
     }
   ]
 }
