@@ -11,6 +11,7 @@ export const style = makeStyles((theme) => {
         zIndex: "10",
         position: "absolute",
         bottom: "0",
+        
       },
     },
     active: {

@@ -13,10 +13,13 @@ import { makeStyles } from "@mui/styles";
        margin: "5px",
        textAlign: "center",
      },
+     title:{
+         fontWeight:"800"
+     }
    };
  });
 const Cards = ({Info}) => {
-     const { imageUrl, titleCard, descriptionCard } = Info;
+     const { imageUrl, titleCard, descriptionCard, fontWeightCard} = Info;
 const useStyles = cardStyle();
   return (
     <Card className={useStyles.containerPage}>
@@ -27,7 +30,15 @@ const useStyles = cardStyle();
         alt={titleCard && titleCard}
       />
       <CardContent>
-        {titleCard && <Typography component="h4">{titleCard}</Typography>}
+        {titleCard && (
+          <Typography
+            component="h4"
+            fontWeight={fontWeightCard&&fontWeightCard}
+            className={useStyles.title}
+          >
+            {titleCard}
+          </Typography>
+        )}
 
         {descriptionCard && <Typography>{descriptionCard}</Typography>}
       </CardContent>
