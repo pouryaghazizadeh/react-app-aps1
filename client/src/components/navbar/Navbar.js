@@ -124,8 +124,9 @@ const Navbar = () => {
         <Toolbar
           component="div"
           className={useStyle.secondNav}
-          // sx={{ display: { xs: "none", sm: "block" } }}
+        
         >
+          {/* button desktop */}
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;
             const dataBtn = {

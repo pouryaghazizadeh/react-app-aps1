@@ -11,6 +11,7 @@ import { makeStyles } from "@mui/styles";
        maxWidth: "350px",
        maxHeight: "500px",
        margin: "5px",
+       textAlign: "center",
      },
    };
  });

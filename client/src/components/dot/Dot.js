@@ -15,8 +15,8 @@ export const style = makeStyles((theme) => {
     },
     active: {
       borderRadius: "50px",
-      width: "20px",
-      height: "20px",
+      width: "17px",
+      height: "17px",
       background: "black",
       margin: "5px",
       border: "2px solid #fff",
@@ -24,11 +24,12 @@ export const style = makeStyles((theme) => {
     },
     disable: {
       borderRadius: "50px",
-      width: "20px",
-      height: "20px",
+      width: "17px",
+      height: "17px",
       background: "#fff",
       margin: "5px",
       cursor: "pointer",
+      border: "2px solid black",
     },
   };
 });
