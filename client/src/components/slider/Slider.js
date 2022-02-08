@@ -1,7 +1,7 @@
 // icon
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import Dot from "../dot/Dot";
@@ -82,6 +82,12 @@ export const sliderStyle = makeStyles((theme) => {
       color: "#000",
       userSelect: "none",
     },
+    textSlider: {
+      zIndex: "11",
+      color: "#fff",
+      position: "absolute",
+      bottom: "15%",
+    },
   };
 });
 const Slider = ({ dataSlider }) => {
@@ -128,7 +134,17 @@ const Slider = ({ dataSlider }) => {
                   alt={value.alt}
                   className={useStyle.imageSlider}
                 />
-                {/* dot slider */}
+                {value.desc && (
+                  <Typography
+                    component="h5"
+                    variant="h4"
+                    className={useStyle.textSlider}
+                  >
+                    {value.desc}
+                  
+                    {/* چراغی را که ایزد برفروزد / هر آنکس پف کند ریشه اش بسوزد... */}
+                  </Typography>
+                )}
               </>
             )}
           </Box>

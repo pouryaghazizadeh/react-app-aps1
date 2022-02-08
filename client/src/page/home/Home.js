@@ -11,9 +11,9 @@ export const homeStyle = makeStyles((theme) => {
       justifyContent: "center",
     },
     containerSlider: {
-      height: "500px",
+      height: "700px",
       width: "100%",
-      marginTop: "10px",
+      marginTop: "3px",
     },
     titleCard: {
       width: "100%",
@@ -23,7 +23,6 @@ export const homeStyle = makeStyles((theme) => {
       display: "flex",
       flexWrap: "wrap",
       width: "100%",
-
       gap: "40px",
       [theme.breakpoints.up("xs")]: {
         justifyContent: "center",
@@ -35,6 +34,7 @@ export const homeStyle = makeStyles((theme) => {
       },
       [theme.breakpoints.up("md")]: {
         padding: "0px 15px 0px 15px",
+        marginTop: "300px",
       },
     },
   };
@@ -60,6 +60,7 @@ const Home = () => {
               Info={{
                 imageUrl: imageUrl,
                 titleCard: text,
+                fontWeightCard:"700"
               }}
               key={i}
             />
