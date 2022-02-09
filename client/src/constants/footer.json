@@ -1,0 +1,20 @@
+{
+  "phoneNumber": {
+    "text": "Tel:",
+    "number": "+44 7511 130050"
+  },
+  "location": {
+    "text": "ADDRESS:",
+    "location": "Landon"
+  },
+  "followUs": {
+    "text": "Follow SAM`S",
+    "links": [
+      {
+        "id": 1,
+        "text": "github",
+        "url": ""
+      }
+    ]
+  }
+}

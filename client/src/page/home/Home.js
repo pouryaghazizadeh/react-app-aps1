@@ -11,9 +11,10 @@ export const homeStyle = makeStyles((theme) => {
       justifyContent: "center",
     },
     containerSlider: {
-      height: "700px",
+      height: "650px",
       width: "100%",
       marginTop: "3px",
+  
     },
     titleCard: {
       width: "100%",

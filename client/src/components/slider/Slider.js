@@ -12,14 +12,16 @@ export const sliderStyle = makeStyles((theme) => {
       position: "relative",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+    
       width: "100%",
       height: "100%",
+ 
     },
     containerImage: {
       position: "absolute",
-      height: "90%",
+      height: "95%",
       display: "flex",
+  
       justifyContent: "center",
       [theme.breakpoints.up("xs")]: {
         width: "100%",
@@ -87,9 +89,34 @@ export const sliderStyle = makeStyles((theme) => {
       color: "black",
       position: "absolute",
       bottom: "15%",
-      [theme.breakpoints.up("xs")]:{
-        fontSize:"20px"
-      }
+      fontWeight: "bold",
+
+      [theme.breakpoints.up("xs")]: {
+        fontSize: "15px",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "25px",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "33px",
+      },
+    },
+    secondText: {
+      zIndex: "11",
+      color: "black",
+      position: "absolute",
+      top: "50%",
+      fontWeight: "bold",
+
+      [theme.breakpoints.up("xs")]: {
+        fontSize: "15px",
+      },
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "25px",
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "33px",
+      },
     },
   };
 });
@@ -137,13 +164,24 @@ const Slider = ({ dataSlider }) => {
                   alt={value.alt}
                   className={useStyle.imageSlider}
                 />
+                {/* first text */}
                 {value.firstText && (
                   <Typography
+                    component="p"
+                    variant="p"
                     className={useStyle.firstText}
                   >
                     {value.firstText}
-
-                    {/* چراغی را که ایزد برفروزد / هر آنکس پف کند ریشه اش بسوزد... */}
+                  </Typography>
+                )}
+                {/* second text */}
+                {value.secondText && (
+                  <Typography
+                    component="p"
+                    variant="p"
+                    className={useStyle.secondText}
+                  >
+                    {value.secondText}
                   </Typography>
                 )}
               </>
