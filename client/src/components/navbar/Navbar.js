@@ -39,7 +39,7 @@ export const navbarStyle = makeStyles((theme) => {
     },
     secondNav: {
       [theme.breakpoints.up("xs")]:{
-        // display: "none",
+        display: "none",
       },
       [theme.breakpoints.up("sm")]: {
         display: "flex",
@@ -123,8 +123,9 @@ const Navbar = () => {
 
         <Toolbar
           component="nav"
+          variant="div"
           className={useStyle.secondNav}
-          sx={{display:{sx:"none",sm:"flex"}}}
+          // sx={{display:{sx:"none",sm:"flex"}}}
         
         >
           {/* button desktop */}

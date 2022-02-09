@@ -8,7 +8,7 @@ import { makeStyles } from "@mui/styles";
    return {
      containerPage: {
        background: "#fff",
-       maxWidth: "350px",
+       maxWidth: "450px",
        maxHeight: "500px",
        margin: "5px",
        textAlign: "center",
