@@ -12,18 +12,23 @@ export const styleFooter = makeStyles((theme) => {
     containerFooter: {
       with: "100%",
       height: "400px",
-      background: "gray",
+      background: "black",
       position: "relative",
       textAlign: "center",
     },
     containerTextInfo: {
-      background: "blue",
+
+      // position: "absolute",
+      // top: "0",
+      // left: "0",
 
       [theme.breakpoints.up("xs")]: {
         display: "flex",
         width: "50%",
-        height: "15%",
+
         flexDirection: "colum",
+        justifyContent: "space-between",
+        height: "20%",
       },
       [theme.breakpoints.up("sm")]: {
         display: "none",
@@ -38,14 +43,17 @@ export const styleFooter = makeStyles((theme) => {
       },
     },
     containerInfo: {
-      paddingLeft: "20px",
-      background: "blue",
+      // paddingLeft: "20px",
+     
       [theme.breakpoints.up("xs")]: {
         position: "absolute",
         width: "50%",
-        height: "80%",
+        height: "30%",
         right: "0",
         top: "0",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       },
       [theme.breakpoints.up("sm")]: {
         width: "50%",
@@ -53,14 +61,17 @@ export const styleFooter = makeStyles((theme) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
+        alignItems: "flex-start",
         left: "0",
         top: "0",
+        paddingLeft: "30px",
       },
     },
     containerIcon: {
-      background: "khaki",
-      width: "50%",
       position: "absolute",
+
+     
+      width: "50%",
       right: "0",
       height: "50%",
       display: "flex",
@@ -73,10 +84,12 @@ export const styleFooter = makeStyles((theme) => {
       [theme.breakpoints.up("xs")]: {
         width: "100%",
         textAlign: "start",
+        bottom: "35px",
       },
       [theme.breakpoints.up("sm")]: {
-        width: "100%",
+        width: "50%",
         textAlign: "center",
+        top: "0",
       },
     },
     textIcon: {
@@ -86,11 +99,11 @@ export const styleFooter = makeStyles((theme) => {
       height: "50px",
       fontSize: "20px",
       fontWeight: "bold",
-      background: "green",
+   
     },
     iconBox: {
       borderReduce: "10px",
-      // border:"1px solid black",
+      border: "1px solid black",
       // background: "red",
       height: "30px",
       width: "30px",
@@ -132,11 +145,6 @@ const Footer = () => {
                 {value.text}
               </Typography>
             </Box>
-            <Box
-              component="section"
-              variant="section"
-              className={useStyle.containerInfo}
-            ></Box>
           </>
         );
       })}
@@ -174,8 +182,8 @@ const Footer = () => {
       
         {footerData.followUs.links.map((value, i) => {
           return value.text === "Github" ? (
-            <Link href={value.url} className={useStyle.iconBox} variant="div">
-              <GitHubIcon />
+            <Link href={value.url} variant="span">
+              <GitHubIcon className={useStyle.iconBox} />
             </Link>
           ) : value.text === "Instagram" ? (
             <Link href={value.url} className={useStyle.iconBox}>
