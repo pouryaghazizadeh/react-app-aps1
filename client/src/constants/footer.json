@@ -1,20 +1,46 @@
 {
-  "phoneNumber": {
-    "text": "Tel:",
-    "number": "+44 7511 130050"
-  },
-  "location": {
-    "text": "ADDRESS:",
-    "location": "Landon"
-  },
+  "information": [
+      {
+      "text": "ADDRESS:",
+      "info": "Landon"
+    },
+    {
+      "text": "Tel:",
+      "info": "+44 7511 130050"
+    }
+    
+  ],
+
   "followUs": {
     "text": "Follow SAM`S",
     "links": [
       {
         "id": 1,
-        "text": "github",
-        "url": ""
+        "text": "Github",
+        "url": "https://github.com/APSignals"
+      },
+      {
+        "id": 2,
+        "text": "Instagram",
+        "url": "https://www.instagram.com/apsignal/"
+      },
+      {
+        "id": 3,
+        "text": "Linkedin",
+        "url": "https://www.linkedin.com/company/71512663/admin/"
+      },
+   
+      {
+        "id": 4,
+        "text": "Telegram",
+        "url": "https://t.me/APSignals/"
+      },
+      {
+        "id": 5,
+        "text": "Youtube",
+        "url": "https://www.youtube.com/channel/UCxGYlCAHcD39g_Yau4yVLkw/playlists"
       }
     ]
-  }
+  },
+  "copyRight":"Landon 2022 @apsignal.com"
 }

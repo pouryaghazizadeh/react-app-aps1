@@ -19,18 +19,19 @@ export const homeStyle = makeStyles((theme) => {
     titleCard: {
       width: "100%",
       textAlign: "center",
+      
     },
     containerCards: {
       display: "flex",
       flexWrap: "wrap",
       width: "100%",
-      gap: "40px",
+      gap: "10px",
       [theme.breakpoints.up("xs")]: {
         justifyContent: "center",
         padding: "0",
       },
       [theme.breakpoints.up("sm")]: {
-        justifyContent: "space-between",
+
         padding: "0px 10px 0px 10px",
       },
       [theme.breakpoints.up("md")]: {
@@ -53,6 +54,7 @@ const Home = () => {
         <Typography component="h3" variant="h2" className={useStyles.titleCard}>
           {dataCards.title}
         </Typography>
+
         {/* cards */}
         {dataCards.cards.map((value, i) => {
           const { text, imageUrl } = value;
