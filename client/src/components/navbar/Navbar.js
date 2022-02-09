@@ -8,27 +8,16 @@ import {
   Toolbar,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useState } from "react";
+import{ useState } from "react";
 import headerData from "../../constants/headerData.json";
 import Buttons from "../button/Button";
+
 export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
       [theme.breakpoints.up("xs")]: {
         display: "flex",
         justifyContent: "center",
-      },
-    },
-    firstNav: {},
-    secondNav: {
-      [theme.breakpoints.up("xs")]: {
-        display: "none",
-      },
-      [theme.breakpoints.up("sm")]: {
-        borderTop: "1px solid gray",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       },
     },
     containerIcon: {
@@ -46,6 +35,17 @@ export const navbarStyle = makeStyles((theme) => {
       },
       [theme.breakpoints.up("sm")]: {
         display: "none",
+      },
+    },
+    secondNav: {
+      [theme.breakpoints.up("xs")]:{
+        // display: "none",
+      },
+      [theme.breakpoints.up("sm")]: {
+        display: "flex",
+        borderTop: "1px solid gray",
+        justifyContent: "center",
+        alignItems: "center",
       },
     },
   };
@@ -122,8 +122,9 @@ const Navbar = () => {
         </Toolbar>
 
         <Toolbar
-          component="div"
+          component="nav"
           className={useStyle.secondNav}
+          sx={{display:{sx:"none",sm:"flex"}}}
         
         >
           {/* button desktop */}

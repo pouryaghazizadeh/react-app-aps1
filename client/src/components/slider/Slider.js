@@ -82,11 +82,14 @@ export const sliderStyle = makeStyles((theme) => {
       color: "#000",
       userSelect: "none",
     },
-    textSlider: {
+    firstText: {
       zIndex: "11",
-      color: "#fff",
+      color: "black",
       position: "absolute",
       bottom: "15%",
+      [theme.breakpoints.up("xs")]:{
+        fontSize:"20px"
+      }
     },
   };
 });
@@ -134,14 +137,12 @@ const Slider = ({ dataSlider }) => {
                   alt={value.alt}
                   className={useStyle.imageSlider}
                 />
-                {value.desc && (
+                {value.firstText && (
                   <Typography
-                    component="h5"
-                    variant="h4"
-                    className={useStyle.textSlider}
+                    className={useStyle.firstText}
                   >
-                    {value.desc}
-                  
+                    {value.firstText}
+
                     {/* چراغی را که ایزد برفروزد / هر آنکس پف کند ریشه اش بسوزد... */}
                   </Typography>
                 )}

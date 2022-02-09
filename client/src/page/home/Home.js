@@ -45,7 +45,7 @@ const Home = () => {
     <Box component="main">
       {/* slider container */}
       <Box className={useStyles.containerSlider}>
-        <Slider dataSlider={dataSlider} />
+        <Slider dataSlider={dataSlider.secondData} />
       </Box>
       {/* cards container */}
       <Box component="section" className={useStyles.containerCards}>
