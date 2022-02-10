@@ -1,15 +1,17 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { Box, Link, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import footerData from "../../constants/footer.json";
-import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import Buttons from '../button/Button';
+import { Box, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import footerData from "../../constants/footer.json";
+import Buttons from "../button/Button";
+
 export const styleFooter = makeStyles((theme) => {
   return {
     containerFooter: {
+      paddingTop:"15px",
       with: "100%",
       height: "400px",
       background: "black",
@@ -17,15 +19,11 @@ export const styleFooter = makeStyles((theme) => {
       textAlign: "center",
     },
     containerTextInfo: {
-
-      // position: "absolute",
-      // top: "0",
-      // left: "0",
-
       [theme.breakpoints.up("xs")]: {
         display: "flex",
         width: "50%",
-
+       
+       
         flexDirection: "colum",
         justifyContent: "space-between",
         height: "20%",
@@ -44,8 +42,9 @@ export const styleFooter = makeStyles((theme) => {
     },
     containerInfo: {
       // paddingLeft: "20px",
-     
+
       [theme.breakpoints.up("xs")]: {
+        marginTop: "20px",
         position: "absolute",
         width: "50%",
         height: "30%",
@@ -56,6 +55,7 @@ export const styleFooter = makeStyles((theme) => {
         justifyContent: "space-between",
       },
       [theme.breakpoints.up("sm")]: {
+        marginTop: "0px",
         width: "50%",
         height: "50%",
         display: "flex",
@@ -69,8 +69,7 @@ export const styleFooter = makeStyles((theme) => {
     },
     containerIcon: {
       position: "absolute",
-
-     
+      marginTop: "20px",
       width: "50%",
       right: "0",
       height: "50%",
@@ -99,15 +98,8 @@ export const styleFooter = makeStyles((theme) => {
       height: "50px",
       fontSize: "20px",
       fontWeight: "bold",
-   
     },
-    iconBox: {
-      borderReduce: "10px",
-      border: "1px solid black",
-      // background: "red",
-      height: "30px",
-      width: "30px",
-    },
+
     textCopyright: {
       position: "absolute",
       bottom: "10px",
@@ -176,32 +168,46 @@ const Footer = () => {
         className={useStyle.containerIcon}
       >
         {/* text icon */}
-        <Typography className={useStyle.textIcon} component="p" variant="section">
+        <Typography
+          className={useStyle.textIcon}
+          component="p"
+          variant="section"
+        >
           {footerData.followUs.text}
         </Typography>
-      
+
         {footerData.followUs.links.map((value, i) => {
-          return value.text === "Github" ? (
-            <Link href={value.url} variant="span">
-              <GitHubIcon className={useStyle.iconBox} />
-            </Link>
-          ) : value.text === "Instagram" ? (
-            <Link href={value.url} className={useStyle.iconBox}>
+          const icons =
+            value.text === "Github" ? (
+              <GitHubIcon />
+            ) : value.text === "Instagram" ? (
               <InstagramIcon />
-            </Link>
-          ) : value.text === "Linkedin" ? (
-            <Link href={value.url} className={useStyle.iconBox}>
-              <LinkedInIcon color="green" />
-            </Link>
-          ) : value.text === "Telegram" ? (
-            <Link href={value.url} className={useStyle.iconBox}>
+            ) : value.text === "Linkedin" ? (
+              <LinkedInIcon />
+            ) : value.text === "Telegram" ? (
               <TelegramIcon />
-            </Link>
-          ) : (
-            <Link href={value.url} className={useStyle.iconBox}>
+            ) : (
               <YouTubeIcon />
-            </Link>
-          );
+            );
+
+          const iconInfo = {
+            typeButton: {
+              button: "button",
+            },
+            url: value.url,
+
+            iconInfo: {
+              icon: icons,
+              iconStyle: {
+                color: "black",
+                background: "#fff",
+                borderRadiuses: "50%",
+                border: "1px solid black",
+                
+              },
+            },
+          };
+          return <Buttons buttonInfo={iconInfo} />;
         })}
       </Box>
       {/* copy right text */}

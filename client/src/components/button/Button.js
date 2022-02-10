@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
+import { Button,Box,IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { NavLink as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import TelegramIcon from "@mui/icons-material/Telegram";
 export const ButtonStyle = makeStyles({
   button: {
@@ -15,7 +15,7 @@ export const ButtonStyle = makeStyles({
   },
 });
 
-const Buttons = ({ buttonInfo ,iconInfo}) => {
+const Buttons = ({ buttonInfo }) => {
   // destructure style
   const {
     colorButton,
@@ -24,6 +24,8 @@ const Buttons = ({ buttonInfo ,iconInfo}) => {
     typeButton,
     eventButton,
     activeStyle,
+    url,
+    iconInfo,
   } = buttonInfo;
 
 
@@ -31,9 +33,7 @@ const Buttons = ({ buttonInfo ,iconInfo}) => {
   return (
     <Button
       disableRipple
-      // disableFocusRipple
-      children={<TelegramIcon />}
-      component={typeButton.linkButton ? RouterLink : "/"}
+      component={typeButton.linkButton ? RouterLink : "button"}
       // check type if type be true pass data(button/submit) in the else check button component have props (typeButton.linkButton) if it is true your button will be link type(RouterLink) if it is false  your button will be type button
       type={
         typeButton.button
@@ -42,13 +42,24 @@ const Buttons = ({ buttonInfo ,iconInfo}) => {
           ? "null"
           : "button"
       }
+      href={url? url:null}
       to={typeButton.linkButton ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
       className={activeStyle ? useStyle.button : useStyle.default}
       classes={{ textTransform: "none" }}
     >
-      {nameButton ? nameButton : "click"}
+      {nameButton && nameButton}
+      {
+        iconInfo && (
+          <Box direction="row" spacing={1}>
+            <IconButton sx={iconInfo.iconStyle} disableRipple>
+              {iconInfo.icon}
+            </IconButton>
+          </Box>
+        )
+        // ) : null
+      }
     </Button>
   );
 };

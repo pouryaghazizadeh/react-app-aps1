@@ -107,6 +107,8 @@ export const sliderStyle = makeStyles((theme) => {
       position: "absolute",
       top: "50%",
       fontWeight: "bold",
+      width: "350px",
+      textAlign:"center",
 
       [theme.breakpoints.up("xs")]: {
         fontSize: "15px",
