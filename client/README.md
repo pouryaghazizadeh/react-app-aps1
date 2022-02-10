@@ -22,10 +22,16 @@ yarn build
 
 ## Button.js
 
-### To send data to the button you must send an object to the Button component with key Info as props like this:
+### This component become simple button , Link(react-router-dom)also accept simple or icon have link
+***
+`Props`
+### To send data as props to the button you must send an object to the Button component with key buttonInfo for button an iconInfo for icon.example:
 
 ```bash
-<Buttons Info={nameYourObject}>
+<Buttons 
+buttonInfo={nameYourObject}
+iconInfo= {nameYourObject}
+/>
 ```
 
 ### property you can send:

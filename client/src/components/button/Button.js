@@ -15,7 +15,7 @@ export const ButtonStyle = makeStyles({
   },
 });
 
-const Buttons = ({ Info }) => {
+const Buttons = ({ buttonInfo ,iconInfo}) => {
   // destructure style
   const {
     colorButton,
@@ -24,13 +24,15 @@ const Buttons = ({ Info }) => {
     typeButton,
     eventButton,
     activeStyle,
-  } = Info;
+  } = buttonInfo;
+
 
   const useStyle = ButtonStyle();
   return (
     <Button
-    children={<TelegramIcon/>}
-  
+      disableRipple
+      // disableFocusRipple
+      children={<TelegramIcon />}
       component={typeButton.linkButton ? RouterLink : "/"}
       // check type if type be true pass data(button/submit) in the else check button component have props (typeButton.linkButton) if it is true your button will be link type(RouterLink) if it is false  your button will be type button
       type={
@@ -43,10 +45,10 @@ const Buttons = ({ Info }) => {
       to={typeButton.linkButton ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
-      className={activeStyle ? useStyle.button  : useStyle.default}
-      classes={{textTransform:"none"}}
+      className={activeStyle ? useStyle.button : useStyle.default}
+      classes={{ textTransform: "none" }}
     >
-      {nameButton?nameButton:"click"}
+      {nameButton ? nameButton : "click"}
     </Button>
   );
 };

@@ -113,7 +113,7 @@ const Navbar = () => {
                 };
                 return (
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Buttons Info={dataBtn} />
+                    <Buttons buttonInfo={dataBtn} />
                   </MenuItem>
                 );
               })}
@@ -140,7 +140,7 @@ const Navbar = () => {
               activeStyle: true,
             };
 
-            return <Buttons key={i} Info={dataBtn} />;
+            return <Buttons key={i} buttonInfo={dataBtn} />;
           })}
         </Toolbar>
       </AppBar>
