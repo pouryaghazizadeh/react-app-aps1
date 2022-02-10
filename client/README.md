@@ -1,4 +1,4 @@
-****## Available Scripts
+\*\*\*\*## Available Scripts
 
 ### getting start:
 
@@ -23,18 +23,30 @@ yarn build
 ## Button.js
 
 ### This component become simple button , Link(react-router-dom)also accept simple or icon have link
-***
+
+---
+
 `Props`
-### To send data as props to the button you must send an object to the Button component with key buttonInfo for button an iconInfo for icon.example:
+
+### To send data as props to the button you must send an object to the Button component with key buttonInfo like this:
 
 ```bash
-<Buttons 
+<Buttons
 buttonInfo={nameYourObject}
-iconInfo= {nameYourObject}
+
 />
 ```
 
 ### property you can send:
+
+| property button | types      |
+| --------------- | ---------- |
+| routeButton     | `String`   |
+| nameButton      | `String`   |
+| colorButton     | `String`   |
+| typeButton      | `object`   |
+| eventButton     | `Function` |
+| iconInfo        | `Object`   |
 
 ### routeButton:
 
@@ -77,16 +89,20 @@ typeButton:{
 
 #### this property accept a function
 
-
 ### activeStyle
-####  default is null but if you want to have the active style you can pass it a true and when the button is active you will have border-bottom
 
-* * *
+#### default is null but if you want to have the active style you can pass it a true and when the button is active you will have border-bottom
+
+---
+
 ## Slider.js
 
 ### ` Props data`
-#### you must send an array of objects as props because in the slider  map on the object.
+
+#### you must send an array of objects as props because in the slider map on the object.
+
 ### `data`
+
 ```bash
 {
   id:Number,
@@ -96,13 +112,11 @@ typeButton:{
   secondText:String
 }
 ```
-#### `firstText` is bottom slider  and is bold
-#### `secondText` is center  slider and is not bold
 
-#### `image` seize all slider 
+#### `firstText` is bottom slider and is bold
+
+#### `secondText` is center slider and is not bold
+
+#### `image` seize all slider
+
 ### `Note:` your slider must be in a container because default **width** and **height** is **100%**
-
-
-
-
-

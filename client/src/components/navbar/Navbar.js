@@ -38,16 +38,22 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     secondNav: {
-      [theme.breakpoints.up("xs")]:{
+      [theme.breakpoints.up("xs")]: {
         display: "none",
+      
       },
       [theme.breakpoints.up("sm")]: {
         display: "flex",
-        borderTop: "1px solid gray",
+        // borderTop: "1px solid gray",
         justifyContent: "center",
         alignItems: "center",
       },
     },
+    lineStyle:{
+      width: "90%",
+      background: "black",
+      margin: "0 2% 0 5%"
+    }
   };
 });
 const Navbar = () => {
@@ -120,13 +126,14 @@ const Navbar = () => {
             </Menu>
           </Box>
         </Toolbar>
+        {/* line component */}
+        <Box component="hr" className={useStyle.lineStyle}></Box>
 
         <Toolbar
           component="nav"
           variant="div"
           className={useStyle.secondNav}
-          // sx={{display:{sx:"none",sm:"flex"}}}
-        
+          sx={{display:{sx:"none",sm:"flex"}}}
         >
           {/* button desktop */}
           {headerData.routes.map((value, i) => {
