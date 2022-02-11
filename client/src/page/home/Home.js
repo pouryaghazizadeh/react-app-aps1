@@ -26,6 +26,7 @@ export const homeStyle = makeStyles((theme) => {
       flexWrap: "wrap",
       width: "100%",
       gap: "10px",
+      marginBottom:"700px",
       [theme.breakpoints.up("xs")]: {
         justifyContent: "center",
         padding: "0",
