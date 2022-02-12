@@ -7,21 +7,21 @@ import { useState } from "react";
 import Dot from "../dot/Dot";
 
 export const sliderStyle = makeStyles((theme) => {
+  console.log("theme",theme);
   return {
     containerSlider: {
       position: "relative",
       display: "flex",
       justifyContent: "center",
-    
+
       width: "100%",
       height: "100%",
- 
     },
     containerImage: {
       position: "absolute",
       height: "95%",
       display: "flex",
-  
+
       justifyContent: "center",
       [theme.breakpoints.up("xs")]: {
         width: "100%",
@@ -103,12 +103,12 @@ export const sliderStyle = makeStyles((theme) => {
     },
     secondText: {
       zIndex: "11",
-      color: "black",
+      color: theme.palette.text.primary,
       position: "absolute",
       top: "50%",
       fontWeight: "bold",
       width: "350px",
-      textAlign:"center",
+      textAlign: "center",
 
       [theme.breakpoints.up("xs")]: {
         fontSize: "15px",
