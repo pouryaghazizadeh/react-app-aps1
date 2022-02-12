@@ -1,3 +1,5 @@
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -5,16 +7,18 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Toolbar,
+  Toolbar
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import{ useState } from "react";
+import { useContext, useState } from "react";
 import headerData from "../../constants/headerData.json";
+import { ColorModeContext } from "../../helper/modeColorContext";
 import Buttons from "../button/Button";
 
 export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
+      background: theme.palette.background.default,
       [theme.breakpoints.up("xs")]: {
         display: "flex",
         justifyContent: "center",
@@ -28,6 +32,7 @@ export const navbarStyle = makeStyles((theme) => {
     logo: {
       height: "60px",
       width: "70px",
+      background: theme.palette.text.icon,
     },
     containerMenuMobile: {
       [theme.breakpoints.up("xs")]: {
@@ -37,27 +42,37 @@ export const navbarStyle = makeStyles((theme) => {
         display: "none",
       },
     },
+    firstNav: {
+      // background: theme.palette.background.default,
+    },
     secondNav: {
+      // background: theme.palette.background.default,
       [theme.breakpoints.up("xs")]: {
         display: "none",
-      
       },
       [theme.breakpoints.up("sm")]: {
         display: "flex",
-        // borderTop: "1px solid gray",
         justifyContent: "center",
         alignItems: "center",
       },
     },
-    lineStyle:{
+    lineStyle: {
       width: "90%",
       background: "black",
-      margin: "0 2% 0 5%"
-    }
+      margin: "0 2% 0 5%",
+    },
   };
 });
+// create context for dark mode
+
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+
+  const { mood, setMood } = useContext(ColorModeContext);
+  console.log(mood, "our mood");
+  const toggleColorMode = () => {
+    setMood(mood === "light" ? "dark" : "light");
+  };
 
   // handle open menu in mobile screen
   const handleOpenNavMenu = (event) => {
@@ -71,8 +86,13 @@ const Navbar = () => {
   const useStyle = navbarStyle();
   return (
     <>
-      <AppBar color="default" className={useStyle.header} position="sticky">
-        <Toolbar component="nav">
+      <AppBar
+        enableColorOnDark
+        color="inherit"
+        className={useStyle.header}
+        position="sticky"
+      >
+        <Toolbar component="nav" className={useStyle.firstNav}>
           <Box flexGrow={2}>
             <img
               src={headerData.logoWebsite.srcLogo}
@@ -80,7 +100,7 @@ const Navbar = () => {
               className={useStyle.logo}
             />
           </Box>
-
+          {/* container menu */}
           <Box className={useStyle.containerMenuMobile}>
             <IconButton
               size="large"
@@ -125,6 +145,19 @@ const Navbar = () => {
               })}
             </Menu>
           </Box>
+          {/* button dark mood */}
+          <Buttons
+            buttonInfo={{
+              typeButton: {
+                button: "button",
+              },
+              eventButton: toggleColorMode,
+              iconInfo: {
+                icon:
+                  mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
+              },
+            }}
+          />
         </Toolbar>
         {/* line component */}
         <Box component="hr" className={useStyle.lineStyle}></Box>
@@ -133,7 +166,7 @@ const Navbar = () => {
           component="nav"
           variant="div"
           className={useStyle.secondNav}
-          sx={{display:{sx:"none",sm:"flex"}}}
+          sx={{ display: { sx: "none", sm: "flex" } }}
         >
           {/* button desktop */}
           {headerData.routes.map((value, i) => {

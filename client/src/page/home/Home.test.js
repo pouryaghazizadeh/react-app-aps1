@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/private-theming";
 import { shallow } from "enzyme";
-import theme from "../../constants/theme";
+import theme from "../../theme/lightTheme";
 import Home from "./Home";
 test("render Home", () => {
   shallow(
