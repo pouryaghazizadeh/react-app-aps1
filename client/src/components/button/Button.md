@@ -21,19 +21,21 @@
 | nameButton      | `String`   |
 | colorButton     | `String`   |
 | eventButton     | `Function` |
+| activeStyle     | `Boolean`  |
 | iconInfo        | `Object`   |
 
 ## `typeButton:`
 
 #### this property specifies your type button.it is an object with 3 keys:
 
-```bash
-typeButton:{
-   linkButton:true,
-   button:"button",
-}
-# linkButton must be  boolean
-```
+| property | type      | value    |
+| -------- | --------- | -------- |
+| Link     | `Boolean` |          |
+| NavLink  | `Boolean` |          |
+| button   | `string`  | "button" |
+
+#### example
+
 
 #### **Note:** if you don`t specify your type button your button will be simple button with type button
 
@@ -44,24 +46,34 @@ typeButton:{
 #### if you want have Link from react-router-dom you should pass route to this property and your route must be **String**.
 
 #### **Note:** you must choose (typeButton.linkButton) to true and button become Link.If you don't send route as props,your default route will be homePage("/").and don`t change default route to null because it will make for you bug.
+
 ---
 
 ## `nameButton:`
 
 #### this is for define your name button and your data must be **String**.
+
 ---
+
 ## `colorButton:`
-#### This props will be value color.color is property that mui provide and you can use default color  mui for more information check the default color in mui and document Button api.
+
+#### This props will be value color.color is property that mui provide and you can use default color mui for more information check the default color in mui and document Button api.
+
 ### [document button mui](https://mui.com/api/button/)
 
-####  If you want to define the specific color you should define and pass it to (sx).
+#### If you want to define the specific color you should define and pass it to (sx).
+
 ---
 
-### eventButton:
+## `eventButton:`
 
-#### this property accept a function 
+#### this property accept a function
+
 ---
 
-### activeStyle
+## `activeStyle`
+### `Note:` activeStyle just work for NavLink. If you want have activeStyle your type button must be NavLink.
 
-#### default is null but if you want to have the active style you can pass it a true and when the button is active you will have border-bottom
+#### as default Button don`t have active style but if you want have activeStyle pass a true to activeStyle props.
+
+---

@@ -24,7 +24,8 @@ yarn build
 ### [documentation](./src/components/button/Button.md)
 
 ---
-
+## Navbar.js
+### [documentation](./src/components/navbar/Navbar.md)
 ## Slider.js
 
 ### ` Props data`

@@ -1,21 +1,32 @@
-import { Button,Box,IconButton } from "@mui/material";
+import { Box, Button, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Link as RouterLink } from "react-router-dom";
+import {NavLink as RouterNavLink, Link as RouterLink } from "react-router-dom";
 
-export const ButtonStyle = makeStyles({
-  button: {
-    "&.active": {
-      borderRadius: "0",
-      borderBottom: "1px solid blue",
-      fontSize: "0.875rem",
+export const ButtonStyle = makeStyles((theme)=>{
+  return {
+    button: {
+      "&.active": {
+        borderRadius: "0",
+        borderBottom: "1px solid blue",
+        fontSize: "0.875rem",
+      },
     },
-  },
-  default: {
-    textTransform: "none",
-  },
+  };
 });
 
-const Buttons = ({ buttonInfo }) => {
+
+
+
+
+
+
+
+
+
+
+
+
+const Buttons = ({buttonInfo}) => {
   // destructure style
   const {
     colorButton,
@@ -29,22 +40,26 @@ const Buttons = ({ buttonInfo }) => {
     iconInfo,
   } = buttonInfo;
 
-
-
-
-
   const useStyle = ButtonStyle();
   return (
     <Button
-      disableRipple
-      component={typeButton.linkButton ? RouterLink : "button"}
+      disableRipple={true}
+      component={
+        typeButton.Link
+          ? RouterLink
+          : typeButton.NavLink
+          ? RouterNavLink
+          : typeButton.button
+          ? typeButton.button
+          : "button"
+      }
       href={url ? url : null}
       to={typeButton.linkButton ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
-      className={activeStyle ? useStyle.button : useStyle.default}
-      classes={{ textTransform: "none" }}
-      sx={styleButton && styleButton}
+      className={activeStyle ? useStyle.button : null}
+
+      sx={styleButton && styleButton  }
     >
       {nameButton && nameButton}
       {iconInfo && (

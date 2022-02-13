@@ -5,14 +5,22 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import { ColorModeContext } from "./helper/modeColorContext";
 import Home from "./page/home/Home";
-import { lightTheme, darkTheme }from "./theme/theme"
+import { darkTheme, lightTheme } from "./theme/theme";
 const App = () => {
   const [mood, setMood] = useState("light");
+
+  const navbarStyle = {
+    styleNavbar: {
+      headerStyle: {
+        // background: "green",
+      },
+    },
+  };
   return (
     <div className="App">
       <ColorModeContext.Provider value={{ mood, setMood }}>
         <ThemeProvider theme={mood === "light" ? lightTheme : darkTheme}>
-          <Navbar />
+          <Navbar navbarInfo={navbarStyle} />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>

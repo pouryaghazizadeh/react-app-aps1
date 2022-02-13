@@ -7,7 +7,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Toolbar
+  Toolbar,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useContext, useState } from "react";
@@ -19,10 +19,6 @@ export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
       background: theme.palette.background.default,
-      [theme.breakpoints.up("xs")]: {
-        display: "flex",
-        justifyContent: "center",
-      },
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -30,8 +26,8 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     logo: {
-      height: "60px",
-      width: "70px",
+      height: "50px",
+      width: "60px",
       background: theme.palette.text.icon,
     },
     containerMenuMobile: {
@@ -43,10 +39,11 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     firstNav: {
-      // background: theme.palette.background.default,
+      background: theme.palette.background.default,
     },
     secondNav: {
-      // background: theme.palette.background.default,
+     
+      background: theme.palette.background.default,
       [theme.breakpoints.up("xs")]: {
         display: "none",
       },
@@ -57,19 +54,25 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     lineStyle: {
-      width: "90%",
-      background: "black",
-      margin: "0 2% 0 5%",
+      [theme.breakpoints.up("xs")]: {
+        width: "0%",
+      },
+      [theme.breakpoints.up("sm")]: {
+        width: "90%",
+        background: "black",
+        margin: "0 2% 0 5%",
+      },
     },
   };
 });
 // create context for dark mode
 
-const Navbar = () => {
+const Navbar = ({navbarInfo}) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-
   const { mood, setMood } = useContext(ColorModeContext);
-  console.log(mood, "our mood");
+  const {styleNavbar} = navbarInfo
+  // console.log(navbarInfo.styleNavbar);
+  // function handle mode
   const toggleColorMode = () => {
     setMood(mood === "light" ? "dark" : "light");
   };
@@ -88,9 +91,10 @@ const Navbar = () => {
     <>
       <AppBar
         enableColorOnDark
-        color="inherit"
+        color="default"
         className={useStyle.header}
         position="sticky"
+        sx={styleNavbar.headerStyle && styleNavbar.headerStyle}
       >
         <Toolbar component="nav" className={useStyle.firstNav}>
           <Box flexGrow={2}>
@@ -100,6 +104,22 @@ const Navbar = () => {
               className={useStyle.logo}
             />
           </Box>
+          {/* button dark mood */}
+          <Buttons
+            buttonInfo={{
+              typeButton: {
+                button: "button",
+              },
+              eventButton: toggleColorMode,
+              iconInfo: {
+                icon:
+                  mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
+              },
+              styleButton: {
+                background: "text.secondary",
+              },
+            }}
+          />
           {/* container menu */}
           <Box className={useStyle.containerMenuMobile}>
             <IconButton
@@ -134,7 +154,7 @@ const Navbar = () => {
                   routeButton: route,
                   nameButton: nameRoute,
                   typeButton: {
-                    linkButton: true,
+                    NavLink: true,
                   },
                 };
                 return (
@@ -145,22 +165,6 @@ const Navbar = () => {
               })}
             </Menu>
           </Box>
-          {/* button dark mood */}
-          <Buttons
-            buttonInfo={{
-              typeButton: {
-                button: "button",
-              },
-              eventButton: toggleColorMode,
-              iconInfo: {
-                icon:
-                  mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
-              },
-              styleButton: {
-                background:'text.secondary',
-              },
-            }}
-          />
         </Toolbar>
         {/* line component */}
         <Box component="hr" className={useStyle.lineStyle}></Box>
@@ -169,18 +173,22 @@ const Navbar = () => {
           component="nav"
           variant="div"
           className={useStyle.secondNav}
-          sx={{ display: { sx: "none", sm: "flex" } }}
+          sx={{ display: { xs: "none", sm: "block" } }}
         >
           {/* button desktop */}
+
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;
             const dataBtn = {
               routeButton: route,
               nameButton: nameRoute,
               typeButton: {
-                linkButton: true,
+                NavLink: true,
               },
-              activeStyle: true,
+              // activeStyle: true,
+              styleButton: {
+                margin: "10px",
+              },
             };
 
             return <Buttons key={i} buttonInfo={dataBtn} />;
