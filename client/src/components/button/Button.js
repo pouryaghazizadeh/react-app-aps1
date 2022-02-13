@@ -1,8 +1,8 @@
 import { Box, Button, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import {NavLink as RouterNavLink, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
-export const ButtonStyle = makeStyles((theme)=>{
+export const ButtonStyle = makeStyles((theme) => {
   return {
     button: {
       "&.active": {
@@ -14,19 +14,7 @@ export const ButtonStyle = makeStyles((theme)=>{
   };
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-const Buttons = ({buttonInfo}) => {
+const Buttons = ({ buttonInfo }) => {
   // destructure style
   const {
     colorButton,
@@ -36,14 +24,15 @@ const Buttons = ({buttonInfo}) => {
     eventButton,
     activeStyle,
     styleButton,
+    rippleStyle,
+    
     url,
     iconInfo,
   } = buttonInfo;
-
   const useStyle = ButtonStyle();
   return (
     <Button
-      disableRipple={true}
+      disableRipple={rippleStyle?true:false}
       component={
         typeButton.Link
           ? RouterLink
@@ -54,12 +43,11 @@ const Buttons = ({buttonInfo}) => {
           : "button"
       }
       href={url ? url : null}
-      to={typeButton.linkButton ? routeButton : "/"}
+      to={typeButton.Link || typeButton.NavLink ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
       className={activeStyle ? useStyle.button : null}
-
-      sx={styleButton && styleButton  }
+      sx={styleButton && styleButton}
     >
       {nameButton && nameButton}
       {iconInfo && (

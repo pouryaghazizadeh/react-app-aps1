@@ -23,6 +23,8 @@
 | eventButton     | `Function` |
 | activeStyle     | `Boolean`  |
 | iconInfo        | `Object`   |
+| url             | `String`   |
+| rippleStyle     | `Boolean`  |
 
 ## `typeButton:`
 
@@ -35,7 +37,6 @@
 | button   | `string`  | "button" |
 
 #### example
-
 
 #### **Note:** if you don`t specify your type button your button will be simple button with type button
 
@@ -72,8 +73,39 @@
 ---
 
 ## `activeStyle`
-### `Note:` activeStyle just work for NavLink. If you want have activeStyle your type button must be NavLink.
 
-#### as default Button don`t have active style but if you want have activeStyle pass a true to activeStyle props.
+### `Note:` activeStyle just work for NavLink. If you want to have activeStyle your type button must be NavLink.
+
+#### as default Button don`t have active style but if you want to have active style pass it true to .
 
 ---
+
+## `url`
+
+### if your button is a simple button you can pass your url to this property
+
+## `rippleStyle`
+
+### to controller ripple background
+
+---
+
+## `Props to icon`
+
+## ## For send data to icon ButtonInfo have iconInfo .
+
+### property you can pass it
+
+| property  | type        |
+| --------- | ----------- |
+| iconStyle | `Object`    |
+| icon      | `component` |
+
+## `icon`
+### you must sen a component as value for example:
+```bash
+icon:<NameIcon/>
+#or 
+icon:[<NameIcon/>]
+
+```

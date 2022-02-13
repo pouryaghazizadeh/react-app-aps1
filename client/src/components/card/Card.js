@@ -3,9 +3,10 @@ import { makeStyles } from "@mui/styles";
 export const cardStyle = makeStyles((theme) => {
   return {
     containerPage: {
-     background:"green",
-      maxWidth: "450px",
-      maxHeight: "700px",
+      border: `1px solid ${theme.palette.text.icon}`,
+      // maxWidth: "450px",
+      width: "300px",
+      height: "400px",
       margin: "5px",
       textAlign: "center",
     },
@@ -13,13 +14,18 @@ export const cardStyle = makeStyles((theme) => {
       fontWeight: "800",
       color: theme.palette.text.primary,
     },
+    containerText: {
+      background: theme.palette.background.default,
+
+      height: "100%",
+    },
   };
 });
 const Cards = ({ Info }) => {
   const { imageUrl, titleCard, descriptionCard, fontWeightCard } = Info;
-  const useStyles = cardStyle();
+  const useStyle = cardStyle();
   return (
-    <Card className={useStyles.containerPage}
+    <Card className={useStyle.containerPage}
     component="section"
      
      >
@@ -29,12 +35,12 @@ const Cards = ({ Info }) => {
         src={imageUrl && imageUrl}
         alt={titleCard && titleCard}
       />
-      <CardContent>
+      <CardContent className={useStyle.containerText}>
         {titleCard && (
           <Typography
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
-            className={useStyles.title}
+            className={useStyle.title}
           >
             {titleCard}
           </Typography>
