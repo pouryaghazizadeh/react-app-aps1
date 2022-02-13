@@ -37,6 +37,9 @@ buttonInfo={nameYourObject}
 />
 ```
 
+
+[a relative link](./src/components/button/Button.md)
+
 ### property you can send:
 
 | property button | types      |

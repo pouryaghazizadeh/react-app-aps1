@@ -11,10 +11,11 @@ import Buttons from "../button/Button";
 export const styleFooter = makeStyles((theme) => {
   return {
     containerFooter: {
-      paddingTop:"15px",
+      boxShadow: "10px 10px 8px 8px rgba(0,0,0,0.6)",
+      paddingTop: "15px",
       with: "100%",
       height: "400px",
-      background: "black",
+      background: theme.palette.background.default,
       position: "relative",
       textAlign: "center",
     },
@@ -22,8 +23,6 @@ export const styleFooter = makeStyles((theme) => {
       [theme.breakpoints.up("xs")]: {
         display: "flex",
         width: "50%",
-       
-       
         flexDirection: "colum",
         justifyContent: "space-between",
         height: "20%",
@@ -33,7 +32,7 @@ export const styleFooter = makeStyles((theme) => {
       },
     },
     textStyle: {
-      color: "#fff",
+      color: theme.palette.text.primary,
       fontWeight: "bold",
 
       [theme.breakpoints.up("xs")]: {
@@ -94,7 +93,7 @@ export const styleFooter = makeStyles((theme) => {
     textIcon: {
       alignItems: "center",
       width: "100%",
-      color: "#fff",
+      color: theme.palette.text.primary,
       height: "50px",
       fontSize: "20px",
       fontWeight: "bold",
@@ -105,7 +104,7 @@ export const styleFooter = makeStyles((theme) => {
       bottom: "10px",
       fontWeight: "bold",
       width: "100%",
-      color: "#fff",
+      color: theme.palette.text.primary,
       [theme.breakpoints.up("xs")]: {
         fontSize: "17px",
       },

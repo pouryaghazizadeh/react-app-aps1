@@ -156,6 +156,9 @@ const Navbar = () => {
                 icon:
                   mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
               },
+              styleButton: {
+                background:'text.secondary',
+              },
             }}
           />
         </Toolbar>

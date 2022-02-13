@@ -7,7 +7,7 @@ import { useState } from "react";
 import Dot from "../dot/Dot";
 
 export const sliderStyle = makeStyles((theme) => {
-  console.log("theme",theme);
+ 
   return {
     containerSlider: {
       position: "relative",
@@ -86,7 +86,7 @@ export const sliderStyle = makeStyles((theme) => {
     },
     firstText: {
       zIndex: "11",
-      color: "black",
+      color: theme.palette.text.primary,
       position: "absolute",
       bottom: "15%",
       fontWeight: "bold",
