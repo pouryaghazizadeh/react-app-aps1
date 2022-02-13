@@ -27,11 +27,12 @@ export const navbarStyle = makeStyles((theme) => {
     },
     logo: {
       height: "50px",
-      width: "60px",
-      marginTop: "0.5rem",
+      width: "65px",
+      marginTop: "0.6rem",
       background: theme.palette.text.icon,
     },
     containerMenuMobile: {
+      color: theme.palette.text.icon,
       [theme.breakpoints.up("xs")]: {
         display: "flex",
       },
@@ -41,12 +42,11 @@ export const navbarStyle = makeStyles((theme) => {
     },
     firstNav: {
       background: theme.palette.background.default,
-      // height: "100%"
+
     },
     secondNav: {
       [theme.breakpoints.up("sm")]: {
         backgroundColor: theme.palette.background.default,
-        display: "flex",
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
@@ -54,8 +54,7 @@ export const navbarStyle = makeStyles((theme) => {
     },
     lineStyle: {
       [theme.breakpoints.up("xs")]: {
-      
-        display: "none"
+        display: "none",
       },
       [theme.breakpoints.up("sm")]: {
         display: "block",
@@ -115,6 +114,9 @@ const Navbar = () => {
               iconInfo: {
                 icon:
                   mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
+                iconStyle: {
+                  color: mood === "light"?"#000":"#fff"
+                },
               },
               styleButton: {
                 background: "palette.background.default",
@@ -174,10 +176,9 @@ const Navbar = () => {
           component="nav"
           variant="div"
           className={useStyle.secondNav}
-          sx={{ display: { xs: "none", sm: "block" } }}
+          sx={{ display: { xs: "none", sm: "flex" } }}
         >
           {/* button desktop */}
-
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;
             const dataBtn = {
@@ -188,7 +189,7 @@ const Navbar = () => {
               },
               activeStyle: true,
               styleButton: {
-                margin: "10px",
+                margin: "0 2rem 0 2rem",
               },
             };
 

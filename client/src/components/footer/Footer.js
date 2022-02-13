@@ -11,7 +11,7 @@ import Buttons from "../button/Button";
 export const styleFooter = makeStyles((theme) => {
   return {
     containerFooter: {
-      boxShadow: "10px 10px 8px 8px rgba(0,0,0,0.6)",
+      boxShadow: "6px 0px 9px 1px rgba(0,0,0,0.6)",
       paddingTop: "15px",
       with: "100%",
       height: "400px",
@@ -40,7 +40,6 @@ export const styleFooter = makeStyles((theme) => {
       },
     },
     containerInfo: {
-      // paddingLeft: "20px",
 
       [theme.breakpoints.up("xs")]: {
         marginTop: "20px",
