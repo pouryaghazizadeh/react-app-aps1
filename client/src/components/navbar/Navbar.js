@@ -28,6 +28,7 @@ export const navbarStyle = makeStyles((theme) => {
     logo: {
       height: "50px",
       width: "60px",
+      marginTop: "0.5rem",
       background: theme.palette.text.icon,
     },
     containerMenuMobile: {
@@ -40,24 +41,24 @@ export const navbarStyle = makeStyles((theme) => {
     },
     firstNav: {
       background: theme.palette.background.default,
+      // height: "100%"
     },
     secondNav: {
-     
-      background: theme.palette.background.default,
-      [theme.breakpoints.up("xs")]: {
-        display: "none",
-      },
       [theme.breakpoints.up("sm")]: {
+        backgroundColor: theme.palette.background.default,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        width: "100%",
       },
     },
     lineStyle: {
       [theme.breakpoints.up("xs")]: {
-        width: "0%",
+      
+        display: "none"
       },
       [theme.breakpoints.up("sm")]: {
+        display: "block",
         width: "90%",
         background: "black",
         margin: "0 2% 0 5%",
@@ -67,10 +68,10 @@ export const navbarStyle = makeStyles((theme) => {
 });
 // create context for dark mode
 
-const Navbar = ({navbarInfo}) => {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { mood, setMood } = useContext(ColorModeContext);
-  const {styleNavbar} = navbarInfo
+
   // console.log(navbarInfo.styleNavbar);
   // function handle mode
   const toggleColorMode = () => {
@@ -94,7 +95,7 @@ const Navbar = ({navbarInfo}) => {
         color="default"
         className={useStyle.header}
         position="sticky"
-        sx={styleNavbar.headerStyle && styleNavbar.headerStyle}
+        sx={{ backgroundColor: "Background.default" }}
       >
         <Toolbar component="nav" className={useStyle.firstNav}>
           <Box flexGrow={2}>
@@ -116,7 +117,7 @@ const Navbar = ({navbarInfo}) => {
                   mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
               },
               styleButton: {
-                background: "text.secondary",
+                background: "palette.background.default",
               },
             }}
           />
@@ -185,7 +186,7 @@ const Navbar = ({navbarInfo}) => {
               typeButton: {
                 NavLink: true,
               },
-              // activeStyle: true,
+              activeStyle: true,
               styleButton: {
                 margin: "10px",
               },

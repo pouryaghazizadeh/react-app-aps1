@@ -39,7 +39,7 @@ const Buttons = ({buttonInfo}) => {
     url,
     iconInfo,
   } = buttonInfo;
-
+console.log("fdssdf", routeButton);
   const useStyle = ButtonStyle();
   return (
     <Button
@@ -54,12 +54,11 @@ const Buttons = ({buttonInfo}) => {
           : "button"
       }
       href={url ? url : null}
-      to={typeButton.linkButton ? routeButton : "/"}
+      to={typeButton.Link || typeButton.NavLink ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
       className={activeStyle ? useStyle.button : null}
-
-      sx={styleButton && styleButton  }
+      sx={styleButton && styleButton}
     >
       {nameButton && nameButton}
       {iconInfo && (

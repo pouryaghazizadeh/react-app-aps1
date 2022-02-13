@@ -9,18 +9,13 @@ import { darkTheme, lightTheme } from "./theme/theme";
 const App = () => {
   const [mood, setMood] = useState("light");
 
-  const navbarStyle = {
-    styleNavbar: {
-      headerStyle: {
-        // background: "green",
-      },
-    },
-  };
+  
+  
   return (
     <div className="App">
       <ColorModeContext.Provider value={{ mood, setMood }}>
         <ThemeProvider theme={mood === "light" ? lightTheme : darkTheme}>
-          <Navbar navbarInfo={navbarStyle} />
+          <Navbar  />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
