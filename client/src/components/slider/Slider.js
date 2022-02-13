@@ -90,15 +90,17 @@ export const sliderStyle = makeStyles((theme) => {
       position: "absolute",
       bottom: "15%",
       fontWeight: "bold",
+      textAlign:"center",
+
 
       [theme.breakpoints.up("xs")]: {
-        fontSize: "15px",
+        fontSize: "1.2rem",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "25px",
+        fontSize: "2rem",
       },
       [theme.breakpoints.up("md")]: {
-        fontSize: "33px",
+        fontSize: "2.5rem",
       },
     },
     secondText: {
@@ -111,13 +113,13 @@ export const sliderStyle = makeStyles((theme) => {
       textAlign: "center",
 
       [theme.breakpoints.up("xs")]: {
-        fontSize: "15px",
+        fontSize: "1.3rem",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "25px",
+        fontSize: "2rem",
       },
       [theme.breakpoints.up("md")]: {
-        fontSize: "33px",
+        fontSize: "2.5rem",
       },
     },
   };
