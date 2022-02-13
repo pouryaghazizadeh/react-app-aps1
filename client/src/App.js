@@ -5,8 +5,7 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import { ColorModeContext } from "./helper/modeColorContext";
 import Home from "./page/home/Home";
-import darkTheme from "./theme/darkTheme";
-import lightTheme from "./theme/lightTheme";
+import { lightTheme, darkTheme }from "./theme/theme"
 const App = () => {
   const [mood, setMood] = useState("light");
   return (

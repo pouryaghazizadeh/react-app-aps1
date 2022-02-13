@@ -24,9 +24,13 @@ const Buttons = ({ buttonInfo }) => {
     typeButton,
     eventButton,
     activeStyle,
+    styleButton,
     url,
     iconInfo,
   } = buttonInfo;
+
+
+
 
 
   const useStyle = ButtonStyle();
@@ -42,23 +46,22 @@ const Buttons = ({ buttonInfo }) => {
           ? "null"
           : "button"
       }
-      href={url? url:null}
+      href={url ? url : null}
       to={typeButton.linkButton ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
       className={activeStyle ? useStyle.button : useStyle.default}
       classes={{ textTransform: "none" }}
+      sx={styleButton && styleButton}
     >
       {nameButton && nameButton}
-      {
-        iconInfo && (
-          <Box direction="row" spacing={1}>
-            <IconButton sx={iconInfo.iconStyle} disableRipple>
-              {iconInfo.icon}
-            </IconButton>
-          </Box>
-        )
-      }
+      {iconInfo && (
+        <Box direction="row" spacing={1}>
+          <IconButton sx={iconInfo.iconStyle} disableRipple>
+            {iconInfo.icon}
+          </IconButton>
+        </Box>
+      )}
     </Button>
   );
 };

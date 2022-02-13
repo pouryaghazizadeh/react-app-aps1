@@ -7,9 +7,9 @@ import dataSlider from "../../constants/slider.json";
 export const homeStyle = makeStyles((theme) => {
   return {
     containerPage: {
-      // background: theme.palette.text.secondary,
-      display: "flex",
-      justifyContent: "center",
+      background:theme.palette.background.paper,
+      height: "100%",
+      paddingBottom:"500px"
     },
     containerSlider: {
       height: "650px",
@@ -19,13 +19,14 @@ export const homeStyle = makeStyles((theme) => {
     titleCard: {
       width: "100%",
       textAlign: "center",
+      color: theme.palette.text.primary
     },
     containerCards: {
       display: "flex",
       flexWrap: "wrap",
       width: "100%",
       gap: "10px",
-      marginBottom: "700px",
+
       [theme.breakpoints.up("xs")]: {
         justifyContent: "center",
         padding: "0",
@@ -43,7 +44,7 @@ export const homeStyle = makeStyles((theme) => {
 const Home = () => {
   const useStyles = homeStyle();
   return (
-    <Box component="main" sx={{ background: "background.default" }}>
+    <Box component="main" variant="div" className={useStyles.containerPage}>
       {/* slider container */}
       <Box className={useStyles.containerSlider}>
         <Slider dataSlider={dataSlider.secondData} />
