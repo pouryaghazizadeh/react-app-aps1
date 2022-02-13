@@ -32,7 +32,7 @@ const Buttons = ({ buttonInfo }) => {
   const useStyle = ButtonStyle();
   return (
     <Button
-      disableRipple={rippleStyle?true:false}
+      disableRipple={rippleStyle ? true : false}
       component={
         typeButton.Link
           ? RouterLink
@@ -52,7 +52,7 @@ const Buttons = ({ buttonInfo }) => {
       {nameButton && nameButton}
       {iconInfo && (
         <Box direction="row" spacing={1}>
-          <IconButton sx={iconInfo.iconStyle} disableRipple>
+          <IconButton sx={iconInfo.iconStyle} size="small" disableRipple>
             {iconInfo.icon}
           </IconButton>
         </Box>

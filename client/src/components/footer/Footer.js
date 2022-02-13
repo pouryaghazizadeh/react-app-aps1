@@ -193,6 +193,12 @@ const Footer = () => {
               button: "button",
             },
             url: value.url,
+            styleButton :{
+            
+              height: "40px",
+              margin:"0",
+        
+            },
 
             iconInfo: {
               icon: icons,
@@ -201,6 +207,8 @@ const Footer = () => {
                 background: "#fff",
                 borderRadiuses: "50%",
                 border: "1px solid black",
+                width: "40px",
+                height: "35px"
                 
               },
             },
