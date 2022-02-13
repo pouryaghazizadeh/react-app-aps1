@@ -22,9 +22,10 @@
 | colorButton     | `String`   |
 | eventButton     | `Function` |
 | activeStyle     | `Boolean`  |
-| iconInfo        | `Object`   |
 | url             | `String`   |
 | rippleStyle     | `Boolean`  |
+| styleButton     | `Object`   |
+| iconInfo        | `Object`   |
 
 ## `typeButton:`
 
@@ -102,10 +103,12 @@
 | icon      | `component` |
 
 ## `icon`
+
 ### you must sen a component as value for example:
+
 ```bash
 icon:<NameIcon/>
-#or 
+#or
 icon:[<NameIcon/>]
 
 ```
