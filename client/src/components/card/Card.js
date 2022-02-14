@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const cardStyle = makeStyles((theme) => {
   return {
     containerPage: {
-      border: `1px solid ${theme.palette.text.icon}`,
+      // border: `1px solid ${theme.palette.text.icon}`,
       width: "300px",
       height: "400px",
       margin: "5px",

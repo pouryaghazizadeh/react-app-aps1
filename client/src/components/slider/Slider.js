@@ -35,8 +35,8 @@ export const sliderStyle = makeStyles((theme) => {
       zIndex: "6",
     },
     containerArrowLeft: {
-      width: "45px",
-      height: "45px",
+      width: "40px",
+      height: "40px",
       background: "#fff",
       borderRadius: "100px",
       display: "flex",
@@ -59,8 +59,8 @@ export const sliderStyle = makeStyles((theme) => {
       userSelect: "none",
     },
     containerArrowRight: {
-      width: "45px",
-      height: "45px",
+      width: "40px",
+      height: "40px",
       background: "#fff",
       borderRadius: "100px",
       display: "flex",
@@ -118,12 +118,12 @@ export const sliderStyle = makeStyles((theme) => {
       [theme.breakpoints.up("xs")]: {
         fontSize: "2.7rem",
         width: "200px",
-        top: "40%",
+        top: "35%",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "3rem",
         width: "400px",
-        top: "47%",
+        top: "43%",
       },
       [theme.breakpoints.up("md")]: {
         fontSize: "3.5rem",

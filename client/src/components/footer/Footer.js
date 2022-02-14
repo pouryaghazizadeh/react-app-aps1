@@ -99,10 +99,11 @@ export const styleFooter = makeStyles((theme) => {
         width: "100%",
         textAlign: "start",
         bottom: "35px",
+        height: "37%",
       },
       [theme.breakpoints.up("sm")]: {
         width: "60%",
-        height: "70%",
+        height: "50%",
         textAlign: "center",
         top: "0",
         alignItems: "flex-start",
