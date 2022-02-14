@@ -12,9 +12,7 @@ export const styleFooter = makeStyles((theme) => {
   return {
     containerFooter: {
       boxShadow: "6px 0px 9px 1px rgba(0,0,0,0.6)",
-      // paddingTop: "15px",
       with: "100%",
-
       background: theme.palette.background.default,
       position: "relative",
       textAlign: "center",
@@ -26,13 +24,11 @@ export const styleFooter = makeStyles((theme) => {
       },
     },
     containerInformation: {
-      // background: "green",
       position: "relative",
       [theme.breakpoints.up("xs")]: {
         height: "35%",
         width: "100%",
         display: "flex",
-
         alignItems: "center",
       },
       [theme.breakpoints.up("sm")]: {
@@ -43,8 +39,6 @@ export const styleFooter = makeStyles((theme) => {
     boxTitle: {
       position: "absolute",
       left: "0",
-
-      // background: "pink",
       [theme.breakpoints.up("xs")]: {
         paddingLeft: "1.3rem",
         width: "50%",
@@ -65,7 +59,6 @@ export const styleFooter = makeStyles((theme) => {
     },
     // box contain value location and phone number
     boxInfoText: {
-      // background: "red",
       position: "absolute",
       [theme.breakpoints.up("xs")]: {
         right: "0",
@@ -91,11 +84,8 @@ export const styleFooter = makeStyles((theme) => {
       fontSize: "1.5rem",
       fontWeight: "900",
     },
-
     containerIcon: {
-      // background: "khaki",
       position: "absolute",
-
       width: "50%",
       right: "0",
       height: "50%",
@@ -123,7 +113,6 @@ export const styleFooter = makeStyles((theme) => {
     },
     textIcon: {
       alignItems: "center",
-      // background: "blue",
       width: "100%",
       color: theme.palette.text.primary,
       fontSize: "1.5rem",
@@ -244,7 +233,6 @@ const Footer = () => {
         })}
       </Box>
       {/* copy right text */}
-
       <Typography
         component="section"
         variant="section"

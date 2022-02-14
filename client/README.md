@@ -26,6 +26,12 @@ yarn build
 ---
 ## Navbar.js
 ### [documentation](./src/components/navbar/Navbar.md)
+---
+## Card.js
+### [documentation](./src/components/card/Card.md)
+---
+## Footer.js
+### [documentation](./src/components/footer/Footer.md)
 ## Slider.js
 
 ### ` Props data`
