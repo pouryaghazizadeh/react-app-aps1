@@ -150,10 +150,11 @@ const Footer = () => {
       <Box component="section" className={useStyle.containerInformation}>
         {/* box get title */}
         <Box component="section" className={useStyle.boxTitle}>
-          {footerData.information.map((value) => {
+          {footerData.information.map((value, i) => {
             return (
               <>
                 <Typography
+                  key={i}
                   component="p"
                   variant="p"
                   className={useStyle.titleStyle}
@@ -166,15 +167,18 @@ const Footer = () => {
         </Box>
         {/* box get information data */}
         <Box component="section" className={useStyle.boxInfoText}>
-          {footerData.information.map((value) => {
+          {footerData.information.map((value, i) => {
             return (
-              <Typography
-                component="p"
-                variant="p"
-                className={useStyle.infoStyleText}
-              >
-                {value.info}
-              </Typography>
+              <>
+                <Typography
+                  key={i}
+                  component="p"
+                  variant="p"
+                  className={useStyle.infoStyleText}
+                >
+                  {value.info}
+                </Typography>
+              </>
             );
           })}
         </Box>
