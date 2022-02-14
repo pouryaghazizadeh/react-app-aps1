@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 // base theme
-const normalTheme = {
+const normalTheme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -10,16 +10,16 @@ const normalTheme = {
       xl: 1536,
     },
   },
-   typography: {
+  typography: {
     button: {
       textTransform: "none",
     },
   },
-}
+});
 
 // dark mode
 const darkTheme = createTheme({
-...normalTheme,
+  ...normalTheme,
   palette: {
     mode: "light",
     text: {
@@ -28,17 +28,16 @@ const darkTheme = createTheme({
       icon: "#fff",
     },
     background: {
-        default: "#191927",
+      default: "#191927",
       paper: "#222230",
     },
   },
 
 });
 
-
 // light mode
 const lightTheme = createTheme({
-...normalTheme,
+  ...normalTheme,
   palette: {
     mode: "light",
     text: {
@@ -50,6 +49,5 @@ const lightTheme = createTheme({
       paper: "#fff",
     },
   },
-
 });
 export { lightTheme, darkTheme };

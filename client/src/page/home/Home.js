@@ -19,7 +19,9 @@ export const homeStyle = makeStyles((theme) => {
     titleCard: {
       width: "100%",
       textAlign: "center",
-      color: theme.palette.text.primary
+      color: theme.palette.text.primary,
+      marginTop:"40px",
+    
     },
     containerCards: {
       display: "flex",
@@ -51,7 +53,7 @@ const Home = () => {
       </Box>
       {/* cards container */}
       <Box component="section" className={useStyles.containerCards}>
-        <Typography component="h3" variant="h2" className={useStyles.titleCard}>
+        <Typography component="h3" variant="h2" className={useStyles.titleCard} sx={{marginBottom:"25px"}}>
           {dataCards.title}
         </Typography>
 
@@ -63,7 +65,10 @@ const Home = () => {
               Info={{
                 imageUrl: imageUrl,
                 titleCard: text,
-                fontWeightCard: "700",
+                fontWeightCard: "900",
+                styleTitleCard:{
+                  fontSize:"1.7rem"
+                }
               }}
               key={i}
             />

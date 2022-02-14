@@ -26,9 +26,9 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     logo: {
-      height: "50px",
-      width: "65px",
-      marginTop: "0.6rem",
+      height: "60px",
+      width: "70px",
+      margin: "0.3em  0  0 0",
       background: theme.palette.text.icon,
     },
     containerMenuMobile: {
@@ -42,7 +42,8 @@ export const navbarStyle = makeStyles((theme) => {
     },
     firstNav: {
       background: theme.palette.background.default,
-
+      width: "100%",
+      padding: "0px",
     },
     secondNav: {
       [theme.breakpoints.up("sm")]: {
@@ -54,13 +55,14 @@ export const navbarStyle = makeStyles((theme) => {
     },
     lineStyle: {
       [theme.breakpoints.up("xs")]: {
-        display: "none",
+        // display: "none",
+        margin: "0 0.5rem 2rem 0.5rem",
       },
       [theme.breakpoints.up("sm")]: {
         display: "block",
-        width: "90%",
-        background: "black",
-        margin: "0 2% 0 5%",
+        width: "98%",
+        background: "#000",
+        margin: "0 1rem 0 1rem",
       },
     },
   };
@@ -96,8 +98,8 @@ const Navbar = () => {
         position="sticky"
         sx={{ backgroundColor: "Background.default" }}
       >
-        <Toolbar component="nav" className={useStyle.firstNav}>
-          <Box flexGrow={2}>
+        <Toolbar component="nav" variant="div" className={useStyle.firstNav}>
+          <Box flexGrow={1}>
             <img
               src={headerData.logoWebsite.srcLogo}
               alt={headerData.logoWebsite.alt}
@@ -115,7 +117,7 @@ const Navbar = () => {
                 icon:
                   mood === "light" ? <Brightness7Icon /> : <Brightness4Icon />,
                 iconStyle: {
-                  color: mood === "light"?"#000":"#fff"
+                  color: mood === "light" ? "#000" : "#fff",
                 },
               },
               styleButton: {
@@ -159,6 +161,10 @@ const Navbar = () => {
                   typeButton: {
                     NavLink: true,
                   },
+                  styleButton: {
+                    
+                    textTransform: "none",
+                  },
                 };
                 return (
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
@@ -189,7 +195,8 @@ const Navbar = () => {
               },
               activeStyle: true,
               styleButton: {
-                margin: "0 2rem 0 2rem",
+                margin: "0 1.5rem 0.5rem 2rem",
+                textTransform: "none",
               },
             };
 
