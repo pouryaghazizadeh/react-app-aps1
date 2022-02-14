@@ -10,7 +10,8 @@ export const cardStyle = makeStyles((theme) => {
       textAlign: "center",
     },
     title: {
-      fontWeight: "800",
+     
+   
       color: theme.palette.text.primary,
     },
     containerText: {
@@ -21,13 +22,16 @@ export const cardStyle = makeStyles((theme) => {
   };
 });
 const Cards = ({ Info }) => {
-  const { imageUrl, titleCard, descriptionCard, fontWeightCard } = Info;
+  const {
+    imageUrl,
+    titleCard,
+    descriptionCard,
+    fontWeightCard,
+    styleTitleCard,
+  } = Info;
   const useStyle = cardStyle();
   return (
-    <Card className={useStyle.containerPage}
-    component="section"
-     
-     >
+    <Card className={useStyle.containerPage} component="section">
       <CardMedia
         component="img"
         height="180"
@@ -40,6 +44,7 @@ const Cards = ({ Info }) => {
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
             className={useStyle.title}
+            sx={styleTitleCard && styleTitleCard}
           >
             {titleCard}
           </Typography>

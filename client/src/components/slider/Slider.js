@@ -7,7 +7,6 @@ import { useState } from "react";
 import Dot from "../dot/Dot";
 
 export const sliderStyle = makeStyles((theme) => {
- 
   return {
     containerSlider: {
       position: "relative",
@@ -49,10 +48,10 @@ export const sliderStyle = makeStyles((theme) => {
       cursor: "pointer",
       paddingLeft: "4px",
       [theme.breakpoints.up("xs")]: {
-        left: "0",
+        left: "10px",
       },
       [theme.breakpoints.up("sm")]: {
-        left: "7px",
+        left: "20px",
       },
     },
     iconLeft: {
@@ -74,10 +73,10 @@ export const sliderStyle = makeStyles((theme) => {
       cursor: "pointer",
       paddingRight: "3px",
       [theme.breakpoints.up("xs")]: {
-        right: "0",
+        right: "10px",
       },
       [theme.breakpoints.up("sm")]: {
-        right: "7px",
+        right: "20px",
       },
     },
     iconRight: {
@@ -88,38 +87,49 @@ export const sliderStyle = makeStyles((theme) => {
       zIndex: "11",
       color: theme.palette.text.primary,
       position: "absolute",
-      bottom: "15%",
+      bottom: "5%",
+
+      textAlign: "center",
       fontWeight: "bold",
-      textAlign:"center",
-
-
       [theme.breakpoints.up("xs")]: {
-        fontSize: "1.2rem",
+        width: "350px",
+        fontSize: "1.5rem",
+        
+        padding: "4px",
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "2rem",
+        width: "400px",
+        padding: "4px",
       },
       [theme.breakpoints.up("md")]: {
-        fontSize: "2.5rem",
+        width: "500px",
       },
     },
     secondText: {
       zIndex: "11",
       color: theme.palette.text.primary,
       position: "absolute",
-      top: "50%",
-      fontWeight: "bold",
-      width: "350px",
+
+      fontWeight: "900",
+
       textAlign: "center",
 
       [theme.breakpoints.up("xs")]: {
-        fontSize: "1.3rem",
+        fontSize: "2.7rem",
+        width: "200px",
+        top: "40%",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "2rem",
+        fontSize: "3rem",
+        width: "400px",
+        top: "47%",
       },
       [theme.breakpoints.up("md")]: {
-        fontSize: "2.5rem",
+        fontSize: "3.5rem",
+        width: "450px",
+
+        top: "40%",
       },
     },
   };

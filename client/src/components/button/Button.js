@@ -3,8 +3,11 @@ import { makeStyles } from "@mui/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
 export const ButtonStyle = makeStyles((theme) => {
+  console.log(theme);
   return {
     button: {
+      textTransform:theme.typography.button.textTransform,
+       
       "&.active": {
         borderRadius: "0",
         borderBottom: "1px solid blue",
@@ -48,6 +51,7 @@ const Buttons = ({ buttonInfo }) => {
       color={colorButton ? colorButton : "primary"}
       className={activeStyle ? useStyle.button : null}
       sx={styleButton && styleButton}
+      classes={{ textTransform: "none" }}
     >
       {nameButton && nameButton}
       {iconInfo && (
