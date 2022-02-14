@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
 export const ButtonStyle = makeStyles((theme) => {
-  console.log(theme);
   return {
     button: {
       textTransform:theme.typography.button.textTransform,

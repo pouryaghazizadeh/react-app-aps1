@@ -55,8 +55,8 @@ export const navbarStyle = makeStyles((theme) => {
     },
     lineStyle: {
       [theme.breakpoints.up("xs")]: {
-        // display: "none",
         margin: "0 0.5rem 2rem 0.5rem",
+        display: "none"
       },
       [theme.breakpoints.up("sm")]: {
         display: "block",
@@ -67,13 +67,12 @@ export const navbarStyle = makeStyles((theme) => {
     },
   };
 });
-// create context for dark mode
+
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { mood, setMood } = useContext(ColorModeContext);
 
-  // console.log(navbarInfo.styleNavbar);
   // function handle mode
   const toggleColorMode = () => {
     setMood(mood === "light" ? "dark" : "light");
