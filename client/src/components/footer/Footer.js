@@ -12,62 +12,90 @@ export const styleFooter = makeStyles((theme) => {
   return {
     containerFooter: {
       boxShadow: "6px 0px 9px 1px rgba(0,0,0,0.6)",
-      paddingTop: "15px",
+      // paddingTop: "15px",
       with: "100%",
-      height: "400px",
+
       background: theme.palette.background.default,
       position: "relative",
       textAlign: "center",
-    },
-    containerTextInfo: {
       [theme.breakpoints.up("xs")]: {
+        height: "450px",
+      },
+      [theme.breakpoints.up("md")]: {
+        height: "350px",
+      },
+    },
+    containerInformation: {
+      // background: "green",
+      position: "relative",
+      [theme.breakpoints.up("xs")]: {
+        height: "35%",
+        width: "100%",
         display: "flex",
+
+        alignItems: "center",
+      },
+      [theme.breakpoints.up("sm")]: {
         width: "50%",
-        flexDirection: "colum",
-        justifyContent: "space-between",
-        height: "20%",
+        height: "70%",
+      },
+    },
+    boxTitle: {
+      position: "absolute",
+      left: "0",
+
+      // background: "pink",
+      [theme.breakpoints.up("xs")]: {
+        paddingLeft: "1.3rem",
+        width: "50%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "space-around",
       },
       [theme.breakpoints.up("sm")]: {
         display: "none",
       },
     },
-    textStyle: {
+    titleStyle: {
       color: theme.palette.text.primary,
-      fontWeight: "bold",
-
-      [theme.breakpoints.up("xs")]: {
-        fontSize: "20px",
-      },
+      fontSize: "1.5rem",
+      fontWeight: "900",
     },
-    containerInfo: {
-
+    // box contain value location and phone number
+    boxInfoText: {
+      // background: "red",
+      position: "absolute",
       [theme.breakpoints.up("xs")]: {
-        marginTop: "20px",
-        position: "absolute",
-        width: "50%",
-        height: "30%",
         right: "0",
-        top: "0",
+        paddingLeft: "1rem",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
+        alignItems: "flex-start",
+        justifyContent: "space-around",
+        width: "58%",
+        height: "100%",
       },
       [theme.breakpoints.up("sm")]: {
-        marginTop: "0px",
-        width: "50%",
-        height: "50%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        alignItems: "flex-start",
+        height: "70%",
+        width: "100%",
+        paddingTop: "2rem",
         left: "0",
         top: "0",
-        paddingLeft: "30px",
+        justifyContent: "space-between",
       },
     },
+    infoStyleText: {
+      color: theme.palette.text.primary,
+      fontSize: "1.5rem",
+      fontWeight: "900",
+    },
+
     containerIcon: {
+      // background: "khaki",
       position: "absolute",
-      marginTop: "20px",
+
       width: "50%",
       right: "0",
       height: "50%",
@@ -75,40 +103,51 @@ export const styleFooter = makeStyles((theme) => {
       flexWrap: "wrap",
       justifyContent: "center",
       textAlign: "center",
-
-      gap: "20px",
-      paddingTop: "5px",
+      gap: "5",
+      paddingTop: "15px",
       [theme.breakpoints.up("xs")]: {
         width: "100%",
         textAlign: "start",
         bottom: "35px",
       },
       [theme.breakpoints.up("sm")]: {
-        width: "50%",
+        width: "60%",
+        height: "70%",
         textAlign: "center",
         top: "0",
+        alignItems: "flex-start",
+      },
+      [theme.breakpoints.up("md")]: {
+        height: "50%",
       },
     },
     textIcon: {
       alignItems: "center",
+      // background: "blue",
       width: "100%",
       color: theme.palette.text.primary,
-      height: "50px",
-      fontSize: "20px",
-      fontWeight: "bold",
+      fontSize: "1.5rem",
+      fontWeight: "900",
+      [theme.breakpoints.up("xs")]: {
+        padding: "1.5rem 0 0 1.3rem",
+        height: "60px",
+      },
+      [theme.breakpoints.up("md")]: {
+        padding: "1rem 0 0 0",
+      },
     },
 
     textCopyright: {
       position: "absolute",
       bottom: "10px",
-      fontWeight: "bold",
+      fontWeight: "900",
       width: "100%",
       color: theme.palette.text.primary,
       [theme.breakpoints.up("xs")]: {
-        fontSize: "17px",
+        fontSize: "1.2rem",
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "21px",
+        fontSize: "1.5rem",
       },
     },
   };
@@ -118,48 +157,40 @@ const Footer = () => {
   const useStyle = styleFooter();
   return (
     <Box component="footer" className={useStyle.containerFooter}>
-      {footerData.information.map((value) => {
-        return (
-          <>
-            {/* container text information  */}
-            <Box
-              component="section"
-              variant="section"
-              className={useStyle.containerTextInfo}
-            >
+      {/* get information about location and phone number */}
+      <Box component="section" className={useStyle.containerInformation}>
+        {/* box get title */}
+        <Box component="section" className={useStyle.boxTitle}>
+          {footerData.information.map((value) => {
+            return (
+              <>
+                <Typography
+                  component="p"
+                  variant="p"
+                  className={useStyle.titleStyle}
+                >
+                  {value.title}
+                </Typography>
+              </>
+            );
+          })}
+        </Box>
+        {/* box get information data */}
+        <Box component="section" className={useStyle.boxInfoText}>
+          {footerData.information.map((value) => {
+            return (
               <Typography
                 component="p"
                 variant="p"
-                className={useStyle.textStyle}
-              >
-                {value.text}
-              </Typography>
-            </Box>
-          </>
-        );
-      })}
-      {/* container location and phone number */}
-      <Box
-        component="section"
-        variant="section"
-        className={useStyle.containerInfo}
-      >
-        {footerData.information.map((value) => {
-          return (
-            <>
-              {/* number */}
-              <Typography
-                component="p"
-                variant="p"
-                className={useStyle.textStyle}
+                className={useStyle.infoStyleText}
               >
                 {value.info}
               </Typography>
-            </>
-          );
-        })}
+            );
+          })}
+        </Box>
       </Box>
-      {/* icon */}
+      {/* icon container */}
       <Box
         component="section"
         variant="section"
@@ -173,7 +204,7 @@ const Footer = () => {
         >
           {footerData.followUs.text}
         </Typography>
-
+        {/*  get icons */}
         {footerData.followUs.links.map((value, i) => {
           const icons =
             value.text === "Github" ? (
@@ -188,18 +219,15 @@ const Footer = () => {
               <YouTubeIcon />
             );
 
-          const iconInfo = {
+          const StyleIcon = {
             typeButton: {
               button: "button",
             },
             url: value.url,
-            styleButton :{
-            
-              height: "40px",
-              margin:"0",
-        
+            styleButton: {
+              margin: "0",
             },
-
+            rippleStyleButton: true,
             iconInfo: {
               icon: icons,
               iconStyle: {
@@ -207,13 +235,12 @@ const Footer = () => {
                 background: "#fff",
                 borderRadiuses: "50%",
                 border: "1px solid black",
-                width: "40px",
-                height: "35px"
-                
               },
+              sizeIcon: "large",
+              disableRippleStyle: true,
             },
           };
-          return <Buttons buttonInfo={iconInfo} />;
+          return <Buttons buttonInfo={StyleIcon} key={i} />;
         })}
       </Box>
       {/* copy right text */}

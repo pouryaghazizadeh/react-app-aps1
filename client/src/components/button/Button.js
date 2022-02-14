@@ -7,7 +7,6 @@ export const ButtonStyle = makeStyles((theme) => {
   return {
     button: {
       textTransform:theme.typography.button.textTransform,
-       
       "&.active": {
         borderRadius: "0",
         borderBottom: "1px solid blue",
@@ -27,15 +26,15 @@ const Buttons = ({ buttonInfo }) => {
     eventButton,
     activeStyle,
     styleButton,
-    rippleStyle,
-    
+    rippleStyleButton,
     url,
     iconInfo,
   } = buttonInfo;
   const useStyle = ButtonStyle();
   return (
     <Button
-      disableRipple={rippleStyle ? true : false}
+ 
+      disableRipple={rippleStyleButton ? true : false}
       component={
         typeButton.Link
           ? RouterLink
@@ -56,7 +55,11 @@ const Buttons = ({ buttonInfo }) => {
       {nameButton && nameButton}
       {iconInfo && (
         <Box direction="row" spacing={1}>
-          <IconButton sx={iconInfo.iconStyle} size="small" disableRipple>
+          <IconButton
+            sx={iconInfo.iconStyle && iconInfo.iconStyle}
+            size={iconInfo.sizeIcon && iconInfo.sizeIcon}
+            disableRipple={iconInfo.disableRippleStyle ? true : false}
+          >
             {iconInfo.icon}
           </IconButton>
         </Box>

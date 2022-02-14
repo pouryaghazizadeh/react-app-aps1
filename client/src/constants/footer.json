@@ -1,18 +1,18 @@
 {
   "information": [
       {
-      "text": "ADDRESS:",
-      "info": "Landon"
+      "title": "ADDRESS:",
+      "info": "London"
     },
     {
-      "text": "Tel:",
+      "title": "Tel:",
       "info": "+44 7511 130050"
     }
     
   ],
 
   "followUs": {
-    "text": "Follow SAM`S",
+    "text": "Follow Sam's",
     "links": [
       {
         "id": 1,

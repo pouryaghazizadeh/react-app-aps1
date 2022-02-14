@@ -31,8 +31,8 @@ const darkTheme = createTheme({
       default: "#191927",
       paper: "#222230",
     },
+   
   },
-
 });
 
 // light mode
@@ -48,6 +48,7 @@ const lightTheme = createTheme({
       default: "#FFFFF",
       paper: "#fff",
     },
+
   },
 });
 export { lightTheme, darkTheme };
