@@ -14,18 +14,18 @@
 
 ### property you can send:
 
-| property button | types      |
-| --------------- | ---------- |
-| typeButton      | `object`   |
-| routeButton     | `String`   |
-| nameButton      | `String`   |
-| colorButton     | `String`   |
-| eventButton     | `Function` |
-| activeStyle     | `Boolean`  |
-| url             | `String`   |
-| rippleStyle     | `Boolean`  |
-| styleButton     | `Object`   |
-| iconInfo        | `Object`   |
+| property button   | types      |
+| ----------------- | ---------- |
+| typeButton        | `object`   |
+| routeButton       | `String`   |
+| nameButton        | `String`   |
+| colorButton       | `String`   |
+| eventButton       | `Function` |
+| activeStyle       | `Boolean`  |
+| url               | `String`   |
+| rippleStyleButton | `Boolean`  |
+| styleButton       | `Object`   |
+| iconInfo          | `Object`   |
 
 ## `typeButton:`
 
@@ -91,16 +91,45 @@
 
 ---
 
-## `Props to icon`
+## `styleButton `
 
-## ## For send data to icon ButtonInfo have iconInfo .
+### Send custom style.
+## `Note:` as default textTransform is upperCase for disable this you should change value textTransform to none
+---
+
+# `Props to icon`
+
+###  For send data to icon ButtonInfo have iconInfo .
 
 ### property you can pass it
 
-| property  | type        |
-| --------- | ----------- |
-| iconStyle | `Object`    |
-| icon      | `component` |
+| property           | type        |
+| ------------------ | ----------- |
+| iconStyle          | `Object`    |
+| icon               | `component` |
+| sizeIcon           | `String`    |
+| disableRippleStyle | `Boolean`   |
+
+## icon component inside button component composed a box and inside them contain IconButton component.
+
+```bash
+<Box >
+    <IconButton>
+        {iconInfo.icon}#this is your icon
+    </IconButton>
+</Box>
+
+```
+
+### for more information about icon and IconButton check this links
+
+[document IConButton](https://mui.com/api/icon-button/)
+
+[icons](https://mui.com/components/material-icons/)
+
+## `iconStyle`
+
+### send custom style to
 
 ## `icon`
 
@@ -112,3 +141,10 @@ icon:<NameIcon/>
 icon:[<NameIcon/>]
 
 ```
+
+## `sizeIcon` 
+### this will be data size in icon
+### size is props mui provide for more information about the sending  value check the document IconButton in mui website
+---
+## `disableRippleStyle`
+### To disable ripple style background

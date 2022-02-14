@@ -219,16 +219,15 @@ const Footer = () => {
               <YouTubeIcon />
             );
 
-          const iconInfo = {
+          const StyleIcon = {
             typeButton: {
               button: "button",
             },
             url: value.url,
             styleButton: {
-              height: "40px",
               margin: "0",
             },
-
+            rippleStyleButton: true,
             iconInfo: {
               icon: icons,
               iconStyle: {
@@ -236,12 +235,12 @@ const Footer = () => {
                 background: "#fff",
                 borderRadiuses: "50%",
                 border: "1px solid black",
-                width: "40px",
-                height: "35px",
               },
+              sizeIcon: "large",
+              disableRippleStyle: true,
             },
           };
-          return <Buttons buttonInfo={iconInfo} key={i} />;
+          return <Buttons buttonInfo={StyleIcon} key={i} />;
         })}
       </Box>
       {/* copy right text */}

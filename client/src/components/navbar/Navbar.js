@@ -18,7 +18,7 @@ import Buttons from "../button/Button";
 export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
-      background: theme.palette.background.default,
+      background:theme.palette.background.default,
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -93,10 +93,11 @@ const Navbar = () => {
     <>
       <AppBar
         enableColorOnDark
-        color="default"
+        color="inherit"
         className={useStyle.header}
         position="sticky"
-        sx={{ backgroundColor: "Background.default" }}
+       
+      
       >
         <Toolbar component="nav" variant="div" className={useStyle.firstNav}>
           <Box flexGrow={1}>
@@ -162,7 +163,6 @@ const Navbar = () => {
                     NavLink: true,
                   },
                   styleButton: {
-                    
                     textTransform: "none",
                   },
                 };
