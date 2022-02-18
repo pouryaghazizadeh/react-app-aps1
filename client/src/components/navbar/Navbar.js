@@ -18,7 +18,7 @@ import Buttons from "../button/Button";
 export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
-      background:theme.palette.background.default,
+      // background: theme.palette.background.secondary,
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -41,13 +41,13 @@ export const navbarStyle = makeStyles((theme) => {
       },
     },
     firstNav: {
-      background: theme.palette.background.default,
+      // background: theme.palette.background.default,
       width: "100%",
       padding: "0px",
     },
     secondNav: {
       [theme.breakpoints.up("sm")]: {
-        backgroundColor: theme.palette.background.default,
+        // backgroundColor: theme.palette.background.default,
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
@@ -56,7 +56,7 @@ export const navbarStyle = makeStyles((theme) => {
     lineStyle: {
       [theme.breakpoints.up("xs")]: {
         margin: "0 0.5rem 2rem 0.5rem",
-        display: "none"
+        display: "none",
       },
       [theme.breakpoints.up("sm")]: {
         display: "block",
@@ -67,7 +67,6 @@ export const navbarStyle = makeStyles((theme) => {
     },
   };
 });
-
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -91,12 +90,10 @@ const Navbar = () => {
   return (
     <>
       <AppBar
-        enableColorOnDark
+        // enableColorOnDark
         color="inherit"
         className={useStyle.header}
         position="sticky"
-       
-      
       >
         <Toolbar component="nav" variant="div" className={useStyle.firstNav}>
           <Box flexGrow={1}>
@@ -195,7 +192,7 @@ const Navbar = () => {
               activeStyle: true,
               styleButton: {
                 margin: "0 1.5rem 0.5rem 2rem",
-                textTransform: "none",
+                // textTransform: "none",
               },
             };
 

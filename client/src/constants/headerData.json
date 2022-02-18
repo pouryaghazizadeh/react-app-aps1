@@ -10,7 +10,7 @@
     },
     {
       "nameRoute": "AboutUs",
-      "route": "/aboutUs"
+      "route": "/about-us"
     }
   ]
 }

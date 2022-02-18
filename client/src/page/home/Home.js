@@ -4,6 +4,7 @@ import Cards from "../../components/card/Card";
 import Slider from "../../components/slider/Slider";
 import dataCards from "../../constants/card.json";
 import dataSlider from "../../constants/slider.json";
+import CodePic from "../../assets/APSCode.jpg"
 export const homeStyle = makeStyles((theme) => {
   return {
     containerPage: {
@@ -53,7 +54,12 @@ const Home = () => {
       </Box>
       {/* cards container */}
       <Box component="section" className={useStyles.containerCards}>
-        <Typography component="h3" variant="h2" className={useStyles.titleCard} sx={{marginBottom:"25px"}}>
+        <Typography
+          component="h3"
+          variant="h2"
+          className={useStyles.titleCard}
+          sx={{ marginBottom: "25px" }}
+        >
           {dataCards.title}
         </Typography>
 
@@ -66,15 +72,16 @@ const Home = () => {
                 imageUrl: imageUrl,
                 titleCard: text,
                 fontWeightCard: "900",
-                styleTitleCard:{
-                  fontSize:"1.7rem"
-                }
+                styleTitleCard: {
+                  fontSize: "1.7rem",
+                },
               }}
               key={i}
             />
           );
         })}
       </Box>
+      <img src={CodePic} alt="code" />
     </Box>
   );
 };

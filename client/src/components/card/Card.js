@@ -29,6 +29,7 @@ const Cards = ({ Info }) => {
     fontWeightCard,
     styleTitleCard,
   } = Info;
+  
   const useStyle = cardStyle();
   return (
     <Card className={useStyle.containerPage} component="section">
