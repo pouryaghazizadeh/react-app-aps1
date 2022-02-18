@@ -5,7 +5,7 @@ import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 export const ButtonStyle = makeStyles((theme) => {
   return {
     button: {
-      textTransform:theme.typography.button.textTransform,
+      textTransform: (theme) => console.log(theme),
       "&.active": {
         borderRadius: "0",
         borderBottom: "1px solid blue",
@@ -30,9 +30,9 @@ const Buttons = ({ buttonInfo }) => {
     iconInfo,
   } = buttonInfo;
   const useStyle = ButtonStyle();
+
   return (
     <Button
- 
       disableRipple={rippleStyleButton ? true : false}
       component={
         typeButton.Link
@@ -47,9 +47,9 @@ const Buttons = ({ buttonInfo }) => {
       to={typeButton.Link || typeButton.NavLink ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
-      className={activeStyle ? useStyle.button : null}
+      className={activeStyle ? useStyle.button : ""}
       sx={styleButton && styleButton}
-      classes={{ textTransform: "none" }}
+      // classes={{ textTransform: "none" }}
     >
       {nameButton && nameButton}
       {iconInfo && (
