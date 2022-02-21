@@ -2,18 +2,19 @@ import { Box, Button, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
-const Buttons = styled(Button, {
-  shouldForwardProp: ({ typeButton }) => typeButton !== "first",
-})(({ theme, typeButtons }) => {
-  return typeButtons === "primary"
-    ? {
-        color: "blue",
-      }
-    : typeButtons === "secondary"
-    ? {
-        color: "blue",
-      }
-    : {};
+const Buttons = styled(Button)(({ theme }) => {
+  return {
+    textTransform: "none",
+     color: theme.palette.text.primary,
+     marginBottom:"0.5rem",
+    "&.active": {
+      borderRadius: "0",
+      borderBottom: "1px solid blue",
+      fontSize: "0.875rem",
+      
+     
+    },
+  };
 });
 //   const Theme = useTheme();
 //  const ButtonStyle = (Theme) => {
@@ -63,7 +64,7 @@ const ButtonComponent = ({ buttonInfo, typeButtons }) => {
       color={colorButton ? colorButton : "primary"}
       // className={activeStyle ? useStyle.button : ""}
       // sx={styleButton && styleButton}
-      sx={{ color: "text.primary" }}
+      // sx={{ color: "text.primary" }}
       // classes={{ textTransform: "none" }}
     >
       {nameButton && nameButton}
