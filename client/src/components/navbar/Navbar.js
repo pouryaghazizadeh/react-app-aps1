@@ -18,7 +18,7 @@ import Buttons from "../button/Button";
 export const navbarStyle = makeStyles((theme) => {
   return {
     header: {
-      // background: theme.palette.background.secondary,
+      background: theme.palette.background.secondary,
     },
     containerIcon: {
       [theme.breakpoints.up("sm")]: {
@@ -196,7 +196,9 @@ const Navbar = () => {
               },
             };
 
-            return <Buttons key={i} buttonInfo={dataBtn} />;
+            return (
+              <Buttons key={i} buttonInfo={dataBtn} typeButton="primary" />
+            );
           })}
         </Toolbar>
       </AppBar>
