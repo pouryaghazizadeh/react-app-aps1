@@ -4,200 +4,201 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import footerData from "../../constants/footer.json";
 import Buttons from "../button/Button";
 
-export const styleFooter = makeStyles((theme) => {
+// container footer style
+const ContainerFooter = styled(Box)(({ theme }) => {
   return {
-    containerFooter: {
-      boxShadow: "6px 0px 9px 1px rgba(0,0,0,0.6)",
-      with: "100%",
-      background: theme.palette.background.default,
-      position: "relative",
-      textAlign: "center",
-      [theme.breakpoints.up("xs")]: {
-        height: "450px",
-      },
-      [theme.breakpoints.up("md")]: {
-        height: "350px",
-      },
+    boxShadow: "6px 0px 9px 1px rgba(0,0,0,0.6)",
+    with: "100%",
+    background: theme.palette.background.default,
+    position: "relative",
+    textAlign: "center",
+    [theme.breakpoints.up("xs")]: {
+      height: "450px",
     },
-    containerInformation: {
-      position: "relative",
-      [theme.breakpoints.up("xs")]: {
-        height: "35%",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-      },
-      [theme.breakpoints.up("sm")]: {
-        width: "50%",
-        height: "70%",
-      },
-    },
-    boxTitle: {
-      position: "absolute",
-      left: "0",
-      [theme.breakpoints.up("xs")]: {
-        paddingLeft: "1.3rem",
-        width: "50%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "space-around",
-      },
-      [theme.breakpoints.up("sm")]: {
-        display: "none",
-      },
-    },
-    titleStyle: {
-      color: theme.palette.text.primary,
-      fontSize: "1.5rem",
-      fontWeight: "900",
-    },
-    // box contain value location and phone number
-    boxInfoText: {
-      position: "absolute",
-      [theme.breakpoints.up("xs")]: {
-        right: "0",
-        paddingLeft: "1rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "space-around",
-        width: "58%",
-        height: "100%",
-      },
-      [theme.breakpoints.up("sm")]: {
-        height: "70%",
-        width: "100%",
-        paddingTop: "2rem",
-        left: "0",
-        top: "0",
-        justifyContent: "space-between",
-      },
-    },
-    infoStyleText: {
-      color: theme.palette.text.primary,
-      fontSize: "1.5rem",
-      fontWeight: "900",
-    },
-    containerIcon: {
-      position: "absolute",
-      width: "50%",
-      right: "0",
-      height: "50%",
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      textAlign: "center",
-      gap: "5",
-      paddingTop: "15px",
-      [theme.breakpoints.up("xs")]: {
-        width: "100%",
-        textAlign: "start",
-        bottom: "35px",
-        height: "37%",
-      },
-      [theme.breakpoints.up("sm")]: {
-        width: "60%",
-        height: "50%",
-        textAlign: "center",
-        top: "0",
-        alignItems: "flex-start",
-      },
-      [theme.breakpoints.up("md")]: {
-        height: "50%",
-      },
-    },
-    textIcon: {
-      alignItems: "center",
-      width: "100%",
-      color: theme.palette.text.primary,
-      fontSize: "1.5rem",
-      fontWeight: "900",
-      [theme.breakpoints.up("xs")]: {
-        padding: "1.5rem 0 0 1.3rem",
-        height: "60px",
-      },
-      [theme.breakpoints.up("md")]: {
-        padding: "1rem 0 0 0",
-      },
-    },
-
-    textCopyright: {
-      position: "absolute",
-      bottom: "10px",
-      fontWeight: "900",
-      width: "100%",
-      color: theme.palette.text.primary,
-      [theme.breakpoints.up("xs")]: {
-        fontSize: "1.2rem",
-      },
-      [theme.breakpoints.up("sm")]: {
-        fontSize: "1.5rem",
-      },
+    [theme.breakpoints.up("md")]: {
+      height: "350px",
     },
   };
 });
 
+const containerInformation = styled(Box)(({ theme }) => {
+  return {
+    position: "relative",
+    [theme.breakpoints.up("xs")]: {
+      height: "35%",
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "50%",
+      height: "70%",
+    },
+  };
+});
+const BoxTitle = styled(Box)(({ theme }) => {
+  return {
+    position: "absolute",
+    left: "0",
+    [theme.breakpoints.up("xs")]: {
+      paddingLeft: "1.3rem",
+      width: "50%",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "space-around",
+    },
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  };
+});
+const TitleStyle = styled(Typography)(({ theme }) => {
+  return {
+    color: theme.palette.text.primary,
+    fontSize: "1.5rem",
+    fontWeight: "900",
+  };
+});
+
+const BoxInfoText = styled(Box)(({ theme }) => {
+  return {
+    position: "absolute",
+    [theme.breakpoints.up("xs")]: {
+      right: "0",
+      paddingLeft: "1rem",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "space-around",
+      width: "58%",
+      height: "100%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      height: "70%",
+      width: "100%",
+      paddingTop: "2rem",
+      left: "0",
+      top: "0",
+      justifyContent: "space-between",
+    },
+  };
+});
+
+const InfoStyleText = styled(Typography)(({ theme }) => {
+  return {
+    color: theme.palette.text.primary,
+    fontSize: "1.5rem",
+    fontWeight: "900",
+  };
+});
+
+const ContainerIcon = styled(Box)(({ theme }) => {
+  return {
+    position: "absolute",
+    width: "50%",
+    right: "0",
+    height: "50%",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    textAlign: "center",
+    gap: "5",
+    paddingTop: "15px",
+    [theme.breakpoints.up("xs")]: {
+      width: "100%",
+      textAlign: "start",
+      bottom: "35px",
+      height: "37%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "60%",
+      height: "50%",
+      textAlign: "center",
+      top: "0",
+      alignItems: "flex-start",
+    },
+    [theme.breakpoints.up("md")]: {
+      height: "50%",
+    },
+  };
+});
+const TextIcons = styled(Typography)(({ theme }) => {
+  return {
+    alignItems: "center",
+    width: "100%",
+    color: theme.palette.text.primary,
+    fontSize: "1.5rem",
+    fontWeight: "900",
+    [theme.breakpoints.up("xs")]: {
+      padding: "1.5rem 0 0 1.3rem",
+      height: "60px",
+    },
+    [theme.breakpoints.up("md")]: {
+      padding: "1rem 0 0 0",
+    },
+  };
+});
+const  TextCopyright = styled(Typography)(({theme})=>{
+  return {
+    position: "absolute",
+    bottom: "10px",
+    fontWeight: "900",
+    width: "100%",
+    color: theme.palette.text.primary,
+    [theme.breakpoints.up("xs")]: {
+      fontSize: "1.2rem",
+    },
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "1.5rem",
+    },
+  };
+})
+
+
 const Footer = () => {
-  const useStyle = styleFooter();
+
   return (
-    <Box component="footer" className={useStyle.containerFooter}>
+    <ContainerFooter component="footer">
       {/* get information about location and phone number */}
-      <Box component="section" className={useStyle.containerInformation}>
+      <containerInformation component="section">
         {/* box get title */}
-        <Box component="section" className={useStyle.boxTitle}>
+        <BoxTitle component="section">
           {footerData.information.map((value, i) => {
             return (
               <>
-                <Typography
-                  key={i}
-                  component="p"
-                  variant="p"
-                  className={useStyle.titleStyle}
-                >
+                <TitleStyle key={i} component="p" variant="p">
                   {value.title}
-                </Typography>
+                </TitleStyle>
               </>
             );
           })}
-        </Box>
+        </BoxTitle>
         {/* box get information data */}
-        <Box component="section" className={useStyle.boxInfoText}>
+        <BoxInfoText component="section">
           {footerData.information.map((value, i) => {
             return (
               <>
-                <Typography
-                  key={i}
-                  component="p"
-                  variant="p"
-                  className={useStyle.infoStyleText}
-                >
+                <InfoStyleText key={i} component="p" variant="p">
                   {value.info}
-                </Typography>
+                </InfoStyleText>
               </>
             );
           })}
-        </Box>
-      </Box>
+        </BoxInfoText>
+      </containerInformation>
       {/* icon container */}
-      <Box
-        component="section"
-        variant="section"
-        className={useStyle.containerIcon}
-      >
+      <ContainerIcon component="section" variant="section">
         {/* text icon */}
-        <Typography
-          className={useStyle.textIcon}
-          component="p"
-          variant="section"
-        >
+        <TextIcons component="p" variant="section">
           {footerData.followUs.text}
-        </Typography>
+        </TextIcons>
         {/*  get icons */}
         {footerData.followUs.links.map((value, i) => {
           const icons =
@@ -236,16 +237,16 @@ const Footer = () => {
           };
           return <Buttons buttonInfo={StyleIcon} key={i} />;
         })}
-      </Box>
+      </ContainerIcon>
       {/* copy right text */}
-      <Typography
+      <TextCopyright
         component="section"
         variant="section"
-        className={useStyle.textCopyright}
+        
       >
         {footerData.copyRight}
-      </Typography>
-    </Box>
+      </TextCopyright>
+    </ContainerFooter>
   );
 };
 
