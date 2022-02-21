@@ -1,26 +1,44 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+
+  Typography,
+} from "@mui/material";
+import { styled } from "@mui/system";
+
 export const cardStyle = makeStyles((theme) => {
   return {
-    containerPage: {
-      // border: `1px solid ${theme.palette.text.icon}`,
-      width: "300px",
-      height: "400px",
-      margin: "5px",
-      textAlign: "center",
-    },
+    containerPage: {},
     title: {
-     
-   
       color: theme.palette.text.primary,
     },
-    containerText: {
-      background: theme.palette.background.default,
 
-      height: "100%",
+    containerText: {
+     ,
+
+     
+    ,
     },
   };
 });
+
+const CardContainer = styled(Card)({
+  width: "300px",
+  height: "400px",
+  margin: "5px",
+  textAlign: "center",
+});
+const containerText = styled(CardContent)({
+    height: "100%"
+})
+const TitleCard =styled(Typography)(({theme})=>{
+  return{
+     background: theme.palette.background.default
+     
+  }
+
+})
 const Cards = ({ Info }) => {
   const {
     imageUrl,
@@ -29,31 +47,31 @@ const Cards = ({ Info }) => {
     fontWeightCard,
     styleTitleCard,
   } = Info;
-  
+
   const useStyle = cardStyle();
   return (
-    <Card className={useStyle.containerPage} component="section">
+    <CardContainer component="section">
       <CardMedia
         component="img"
         height="180"
         src={imageUrl && imageUrl}
         alt={titleCard && titleCard}
       />
-      <CardContent className={useStyle.containerText}>
+      <containerText className={useStyle.containerText}>
         {titleCard && (
-          <Typography
+          <TitleCard
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
             className={useStyle.title}
             sx={styleTitleCard && styleTitleCard}
           >
             {titleCard}
-          </Typography>
+          </TitleCard>
         )}
 
         {descriptionCard && <Typography>{descriptionCard}</Typography>}
-      </CardContent>
-    </Card>
+      </containerText>
+    </CardContainer>
   );
 };
 
