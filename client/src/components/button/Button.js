@@ -1,21 +1,36 @@
 import { Box, Button, IconButton } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
-export const ButtonStyle = makeStyles((theme) => {
+const Buttons = styled(Button)(({ theme }) => {
   return {
-    button: {
-      textTransform: (theme) => console.log(theme),
-      "&.active": {
-        borderRadius: "0",
-        borderBottom: "1px solid blue",
-        fontSize: "0.875rem",
-      },
+    textTransform: "none",
+     color: theme.palette.text.primary,
+     marginBottom:"0.5rem",
+    "&.active": {
+      borderRadius: "0",
+      borderBottom: "1px solid blue",
+      fontSize: "0.875rem",
+      
+     
     },
   };
 });
-
-const Buttons = ({ buttonInfo }) => {
+//   const Theme = useTheme();
+//  const ButtonStyle = (Theme) => {
+//   return {
+//     button: {
+// textTransform: "none",
+//       "&.active": {
+//         borderRadius: "0",
+//         borderBottom: "1px solid blue",
+//         fontSize: "0.875rem",
+//       },
+//     },
+//   };
+// };
+const ButtonComponent = ({ buttonInfo, typeButtons }) => {
+  console.log(typeButtons);
   // destructure style
   const {
     colorButton,
@@ -29,10 +44,10 @@ const Buttons = ({ buttonInfo }) => {
     url,
     iconInfo,
   } = buttonInfo;
-  const useStyle = ButtonStyle();
+  // const useStyle = ButtonStyle();
 
   return (
-    <Button
+    <Buttons
       disableRipple={rippleStyleButton ? true : false}
       component={
         typeButton.Link
@@ -47,8 +62,9 @@ const Buttons = ({ buttonInfo }) => {
       to={typeButton.Link || typeButton.NavLink ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
       color={colorButton ? colorButton : "primary"}
-      className={activeStyle ? useStyle.button : ""}
-      sx={styleButton && styleButton}
+      // className={activeStyle ? useStyle.button : ""}
+      // sx={styleButton && styleButton}
+      // sx={{ color: "text.primary" }}
       // classes={{ textTransform: "none" }}
     >
       {nameButton && nameButton}
@@ -63,8 +79,8 @@ const Buttons = ({ buttonInfo }) => {
           </IconButton>
         </Box>
       )}
-    </Button>
+    </Buttons>
   );
 };
 
-export default Buttons;
+export default ButtonComponent;

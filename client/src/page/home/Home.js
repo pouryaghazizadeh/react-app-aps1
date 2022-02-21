@@ -4,13 +4,12 @@ import Cards from "../../components/card/Card";
 import Slider from "../../components/slider/Slider";
 import dataCards from "../../constants/card.json";
 import dataSlider from "../../constants/slider.json";
-import CodePic from "../../assets/APSCode.jpg"
 export const homeStyle = makeStyles((theme) => {
   return {
     containerPage: {
-      background:theme.palette.background.paper,
+      background: theme.palette.background.paper,
       height: "100%",
-      paddingBottom:"500px"
+      paddingBottom: "500px",
     },
     containerSlider: {
       height: "650px",
@@ -21,8 +20,7 @@ export const homeStyle = makeStyles((theme) => {
       width: "100%",
       textAlign: "center",
       color: theme.palette.text.primary,
-      marginTop:"40px",
-    
+      marginTop: "40px",
     },
     containerCards: {
       display: "flex",
@@ -81,7 +79,6 @@ const Home = () => {
           );
         })}
       </Box>
-      <img src={CodePic} alt="code" />
     </Box>
   );
 };

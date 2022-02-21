@@ -6,9 +6,9 @@ import theme from "./constants/theme";
 test("renders learn react link", () => {
   render(
     <BrowserRouter>
-      {/* <ThemeProvider theme={theme}> */}
+      <ThemeProvider theme={theme}>
         <App />
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </BrowserRouter>
   );
 });
