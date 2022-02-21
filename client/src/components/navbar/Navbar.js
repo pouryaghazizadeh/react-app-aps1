@@ -9,61 +9,67 @@ import {
   MenuItem,
   Toolbar,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import { useContext, useState } from "react";
 import headerData from "../../constants/headerData.json";
 import { ColorModeContext } from "../../helper/modeColorContext";
 import Buttons from "../button/Button";
 
-export const navbarStyle = makeStyles((theme) => {
+const Header = styled(AppBar)(({ theme }) => {
   return {
-    header: {
-      background: theme.palette.background.secondary,
+    background: theme.palette.background.secondary,
+  };
+});
+const Logo = styled("img")(({ theme }) => {
+  return {
+    height: "60px",
+    width: "70px",
+    margin: "0.3em  0  0 0",
+    background: theme.palette.text.icon,
+  };
+});
+
+const ContainerMenuMobile = styled(Box)(({ theme }) => {
+  return {
+    color: theme.palette.text.icon,
+    [theme.breakpoints.up("xs")]: {
+      display: "flex",
     },
-    containerIcon: {
-      [theme.breakpoints.up("sm")]: {
-        display: "none",
-      },
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
     },
-    logo: {
-      height: "60px",
-      width: "70px",
-      margin: "0.3em  0  0 0",
-      background: theme.palette.text.icon,
-    },
-    containerMenuMobile: {
-      color: theme.palette.text.icon,
-      [theme.breakpoints.up("xs")]: {
-        display: "flex",
-      },
-      [theme.breakpoints.up("sm")]: {
-        display: "none",
-      },
-    },
-    firstNav: {
-      // background: theme.palette.background.default,
+  };
+});
+const FirstNav = styled(Toolbar)(({ theme }) => {
+  return {
+    background: theme.palette.background.default,
+    width: "100%",
+    padding: "0px",
+  };
+});
+const SecondNav = styled(Toolbar)(({ theme }) => {
+  return {
+    [theme.breakpoints.up("xs")]: { display: "none" },
+    [theme.breakpoints.up("sm")]: {
+      backgroundColor: theme.palette.background.default,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
       width: "100%",
-      padding: "0px",
     },
-    secondNav: {
-      [theme.breakpoints.up("sm")]: {
-        // backgroundColor: theme.palette.background.default,
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-      },
+  };
+});
+const Line = styled(Box)(({ theme }) => {
+  return {
+    [theme.breakpoints.up("xs")]: {
+      margin: "0 0.5rem 2rem 0.5rem",
+      display: "none",
     },
-    lineStyle: {
-      [theme.breakpoints.up("xs")]: {
-        margin: "0 0.5rem 2rem 0.5rem",
-        display: "none",
-      },
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-        width: "98%",
-        background: "#000",
-        margin: "0 1rem 0 1rem",
-      },
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+      width: "98%",
+      background: "#000",
+      margin: "0 1rem 0 1rem",
     },
   };
 });
@@ -86,21 +92,14 @@ const Navbar = () => {
     setAnchorElNav(null);
   };
 
-  const useStyle = navbarStyle();
   return (
     <>
-      <AppBar
-        // enableColorOnDark
-        color="inherit"
-        className={useStyle.header}
-        position="sticky"
-      >
-        <Toolbar component="nav" variant="div" className={useStyle.firstNav}>
+      <Header enableColorOnDark color="inherit" position="sticky">
+        <FirstNav component="nav" variant="div">
           <Box flexGrow={1}>
-            <img
+            <Logo
               src={headerData.logoWebsite.srcLogo}
               alt={headerData.logoWebsite.alt}
-              className={useStyle.logo}
             />
           </Box>
           {/* button dark mood */}
@@ -123,7 +122,7 @@ const Navbar = () => {
             }}
           />
           {/* container menu */}
-          <Box className={useStyle.containerMenuMobile}>
+          <ContainerMenuMobile>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -148,7 +147,6 @@ const Navbar = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              className={useStyle.menuStyle}
             >
               {headerData.routes.map((value, index) => {
                 const { nameRoute, route } = value;
@@ -169,17 +167,12 @@ const Navbar = () => {
                 );
               })}
             </Menu>
-          </Box>
-        </Toolbar>
+          </ContainerMenuMobile>
+        </FirstNav>
         {/* line component */}
-        <Box component="hr" className={useStyle.lineStyle}></Box>
+        <Line component="hr"></Line>
 
-        <Toolbar
-          component="nav"
-          variant="div"
-          className={useStyle.secondNav}
-          sx={{ display: { xs: "none", sm: "flex" } }}
-        >
+        <SecondNav component="nav" variant="div">
           {/* button desktop */}
           {headerData.routes.map((value, i) => {
             const { nameRoute, route } = value;
@@ -192,7 +185,6 @@ const Navbar = () => {
               activeStyle: true,
               styleButton: {
                 margin: "0 1.5rem 0.5rem 2rem",
-                // textTransform: "none",
               },
             };
 
@@ -200,8 +192,8 @@ const Navbar = () => {
               <Buttons key={i} buttonInfo={dataBtn} typeButton="primary" />
             );
           })}
-        </Toolbar>
-      </AppBar>
+        </SecondNav>
+      </Header>
     </>
   );
 };
