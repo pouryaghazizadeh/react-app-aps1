@@ -1,4 +1,5 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 export const cardStyle = makeStyles((theme) => {
   return {
@@ -10,8 +11,6 @@ export const cardStyle = makeStyles((theme) => {
       textAlign: "center",
     },
     title: {
-     
-   
       color: theme.palette.text.primary,
     },
     containerText: {
@@ -19,6 +18,28 @@ export const cardStyle = makeStyles((theme) => {
 
       height: "100%",
     },
+  };
+});
+
+const ContainerCard = styled(Card)(({ theme }) => {
+  return {
+    width: "300px",
+    height: "400px",
+    margin: "5px",
+    textAlign: "center",
+  };
+});
+const ContainerTitle = styled(CardContent)(({ theme }) => {
+  return {
+    background: theme.palette.background.default,
+
+    height: "100%",
+  };
+});
+
+const TitleCard = styled(Typography)(({ theme }) => {
+  return {
+    color: theme.palette.text.primary,
   };
 });
 const Cards = ({ Info }) => {
@@ -29,31 +50,33 @@ const Cards = ({ Info }) => {
     fontWeightCard,
     styleTitleCard,
   } = Info;
-  
+
   const useStyle = cardStyle();
   return (
-    <Card className={useStyle.containerPage} component="section">
+    <ContainerCard component="section">
       <CardMedia
         component="img"
         height="180"
         src={imageUrl && imageUrl}
         alt={titleCard && titleCard}
       />
-      <CardContent className={useStyle.containerText}>
+      <ContainerTitle
+      //  className={useStyle.containerText}
+      >
         {titleCard && (
-          <Typography
+          <TitleCard
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
-            className={useStyle.title}
+            // className={useStyle.title}
             sx={styleTitleCard && styleTitleCard}
           >
             {titleCard}
-          </Typography>
+          </TitleCard>
         )}
 
         {descriptionCard && <Typography>{descriptionCard}</Typography>}
-      </CardContent>
-    </Card>
+      </ContainerTitle>
+    </ContainerCard>
   );
 };
 

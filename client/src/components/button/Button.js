@@ -29,8 +29,8 @@ const Buttons = styled(Button)(({ theme }) => {
 //     },
 //   };
 // };
-const ButtonComponent = ({ buttonInfo, typeButtons }) => {
-  console.log(typeButtons);
+const ButtonComponent = ({ buttonInfo}) => {
+
   // destructure style
   const {
     colorButton,
