@@ -183,14 +183,9 @@ const Navbar = () => {
                 NavLink: true,
               },
               activeStyle: true,
-              styleButton: {
-                margin: "0 1.5rem 0.5rem 2rem",
-              },
             };
 
-            return (
-              <Buttons key={i} buttonInfo={dataBtn} typeButton="primary" />
-            );
+            return <Buttons key={i} buttonInfo={dataBtn} color="secondary" />;
           })}
         </SecondNav>
       </Header>

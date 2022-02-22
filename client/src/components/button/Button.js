@@ -2,35 +2,31 @@ import { Box, Button, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
-const Buttons = styled(Button)(({ theme }) => {
+const Buttons = styled(Button, {
+  shouldForwardProp: (prop) =>
+    prop !== "color" && prop !== "variant" && prop !== "sx",
+  name: "MyThemeComponent",
+  slot: "Root",
+  overridesResolver: (props, styles) => [
+    styles.root,
+    props.color === "primary" && styles.primary,
+    props.color === "secondary" && styles.secondary,
+  ],
+})(({ theme }) => {
   return {
     textTransform: "none",
-     color: theme.palette.text.primary,
-     marginBottom:"0.5rem",
+    // color: theme.palette.text.primary,
+    marginBottom: "0.5rem",
+
     "&.active": {
       borderRadius: "0",
       borderBottom: "1px solid blue",
       fontSize: "0.875rem",
-      
-     
     },
   };
 });
-//   const Theme = useTheme();
-//  const ButtonStyle = (Theme) => {
-//   return {
-//     button: {
-// textTransform: "none",
-//       "&.active": {
-//         borderRadius: "0",
-//         borderBottom: "1px solid blue",
-//         fontSize: "0.875rem",
-//       },
-//     },
-//   };
-// };
-const ButtonComponent = ({ buttonInfo}) => {
 
+const ButtonComponent = ({ buttonInfo }) => {
   // destructure style
   const {
     colorButton,

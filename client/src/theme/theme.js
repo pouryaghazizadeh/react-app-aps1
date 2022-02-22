@@ -1,6 +1,36 @@
 import { createTheme } from "@mui/material/styles";
 // base theme
 const normalTheme = createTheme({
+  components: {
+    MyThemeComponent: {
+      styleOverrides: {
+        root: {
+          color: "green",
+        },
+        primary: {
+ 
+        },
+        secondary: {
+          color: "red",
+          backgroundColor: "pink",
+        },
+      },
+      variants: [
+        {
+          props: { variant: "dashed", color: "primary" },
+          style: {
+            border: "1px dashed darkblue",
+          },
+        },
+        {
+          props: { variant: "dashed", color: "secondary" },
+          style: {
+            border: "1px dashed darkred",
+          },
+        },
+      ],
+    },
+  },
   breakpoints: {
     values: {
       xs: 0,
@@ -17,7 +47,6 @@ const normalTheme = createTheme({
   },
 });
 
-
 // dark mode
 const darkTheme = createTheme({
   ...normalTheme,
@@ -32,7 +61,6 @@ const darkTheme = createTheme({
       default: "#191927",
       paper: "#222230",
     },
-   
   },
 });
 
@@ -49,10 +77,6 @@ const lightTheme = createTheme({
       default: "#FFFFF",
       paper: "#fff",
     },
-
   },
 });
 export { lightTheme, darkTheme };
-
-
-
