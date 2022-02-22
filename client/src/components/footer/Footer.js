@@ -26,7 +26,7 @@ const ContainerFooter = styled(Box)(({ theme }) => {
   };
 });
 
-const containerInformation = styled(Box)(({ theme }) => {
+const ContainerInformation = styled(Box)(({ theme }) => {
   return {
     position: "relative",
     [theme.breakpoints.up("xs")]: {
@@ -167,7 +167,7 @@ const Footer = () => {
   return (
     <ContainerFooter component="footer">
       {/* get information about location and phone number */}
-      <containerInformation component="section">
+      <ContainerInformation component="section">
         {/* box get title */}
         <BoxTitle component="section">
           {footerData.information.map((value, i) => {
@@ -192,7 +192,7 @@ const Footer = () => {
             );
           })}
         </BoxInfoText>
-      </containerInformation>
+      </ContainerInformation>
       {/* icon container */}
       <ContainerIcon component="section" variant="section">
         {/* text icon */}
