@@ -2,20 +2,24 @@ import { Box, Button, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
-const Buttons = styled(Button, {
-  shouldForwardProp: (prop) =>
-    prop !== "color" && prop !== "variant" && prop !== "sx",
-  name: "MyThemeComponent",
-  slot: "Root",
-  overridesResolver: (props, styles) => [
-    styles.root,
-    props.color === "primary" && styles.primary,
-    props.color === "secondary" && styles.secondary,
-  ],
-})(({ theme }) => {
+const Buttons = styled(
+  Button
+//* to get props use this method
+  //   , {
+  //   shouldForwardProp: (prop) =>
+  //     prop !== "color" && prop !== "variant" && prop !== "sx",
+  //   name: "MyThemeComponent",
+  //   slot: "Root",
+  //   overridesResolver: (props, styles) => [
+  //     styles.root,
+  //     props.color === "primary" && styles.primary,
+  //     props.color === "secondary" && styles.secondary,
+  //   ],
+  // }
+)(({ theme }) => {
   return {
     textTransform: "none",
-    // color: theme.palette.text.primary,
+    color: theme.palette.text.primary,
     marginBottom: "0.5rem",
 
     "&.active": {
@@ -29,18 +33,15 @@ const Buttons = styled(Button, {
 const ButtonComponent = ({ buttonInfo }) => {
   // destructure style
   const {
-    colorButton,
     nameButton,
     routeButton,
     typeButton,
     eventButton,
-    activeStyle,
-    styleButton,
+
     rippleStyleButton,
     url,
     iconInfo,
   } = buttonInfo;
-  // const useStyle = ButtonStyle();
 
   return (
     <Buttons
@@ -57,11 +58,6 @@ const ButtonComponent = ({ buttonInfo }) => {
       href={url ? url : null}
       to={typeButton.Link || typeButton.NavLink ? routeButton : "/"}
       onClick={eventButton ? eventButton : null}
-      color={colorButton ? colorButton : "primary"}
-      // className={activeStyle ? useStyle.button : ""}
-      // sx={styleButton && styleButton}
-      // sx={{ color: "text.primary" }}
-      // classes={{ textTransform: "none" }}
     >
       {nameButton && nameButton}
       {iconInfo && (

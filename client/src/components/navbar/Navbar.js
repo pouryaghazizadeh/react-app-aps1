@@ -182,10 +182,9 @@ const Navbar = () => {
               typeButton: {
                 NavLink: true,
               },
-              activeStyle: true,
             };
 
-            return <Buttons key={i} buttonInfo={dataBtn} color="secondary" />;
+            return <Buttons key={i} buttonInfo={dataBtn} />;
           })}
         </SecondNav>
       </Header>
