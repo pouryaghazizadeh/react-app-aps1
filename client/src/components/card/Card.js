@@ -1,25 +1,25 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-export const cardStyle = makeStyles((theme) => {
-  return {
-    containerPage: {
-      // border: `1px solid ${theme.palette.text.icon}`,
-      width: "300px",
-      height: "400px",
-      margin: "5px",
-      textAlign: "center",
-    },
-    title: {
-      color: theme.palette.text.primary,
-    },
-    containerText: {
-      background: theme.palette.background.default,
+// export const cardStyle = makeStyles((theme) => {
+//   return {
+//     containerPage: {
+//       // border: `1px solid ${theme.palette.text.icon}`,
+//       width: "300px",
+//       height: "400px",
+//       margin: "5px",
+//       textAlign: "center",
+//     },
+//     title: {
+//       color: theme.palette.text.primary,
+//     },
+//     containerText: {
+//       background: theme.palette.background.default,
 
-      height: "100%",
-    },
-  };
-});
+//       height: "100%",
+//     },
+//   };
+// });
 
 const ContainerCard = styled(Card)(({ theme }) => {
   return {
@@ -51,7 +51,7 @@ const Cards = ({ Info }) => {
     styleTitleCard,
   } = Info;
 
-  const useStyle = cardStyle();
+  // const useStyle = cardStyle();
   return (
     <ContainerCard component="section">
       <CardMedia
@@ -73,7 +73,6 @@ const Cards = ({ Info }) => {
             {titleCard}
           </TitleCard>
         )}
-
         {descriptionCard && <Typography>{descriptionCard}</Typography>}
       </ContainerTitle>
     </ContainerCard>

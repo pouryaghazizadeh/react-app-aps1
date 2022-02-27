@@ -1,21 +1,30 @@
+import "@testing-library/jest-dom/extend-expect";
+import { render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { render } from "@testing-library/react";
-// import TestRenderer from "react-test-renderer";
 import Button from "./Button";
-
 const mockData = {
   typeButton: {
-    Link: true,
+    Button: "button",
   },
-  routeButton:"/",
-  nameButton:"button"
+
+  nameButton: "click",
 };
 
 test("render Button component", () => {
   render(
     <BrowserRouter>
-      <Button buttonInfo={mockData } />
+      <Button buttonInfo={mockData} />
     </BrowserRouter>
   );
+});
+
+test("check the name", () => {
+  render(
+    <BrowserRouter>
+      <Button buttonInfo={mockData} />
+    </BrowserRouter>
+  );
+  const Btn = screen.getByRole("button");
+  expect(Btn.textContent).toBe("click");
 });
