@@ -1,6 +1,5 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
 // export const cardStyle = makeStyles((theme) => {
 //   return {
 //     containerPage: {
@@ -51,7 +50,6 @@ const Cards = ({ Info }) => {
     styleTitleCard,
   } = Info;
 
-  // const useStyle = cardStyle();
   return (
     <ContainerCard component="section">
       <CardMedia
