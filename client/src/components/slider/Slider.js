@@ -2,11 +2,9 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Box, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import Dot from "../dot/Dot";
-
-import { styled } from "@mui/material/styles";
 
 const ContainerSlider = styled(Box)(({ theme }) => {
   return {
@@ -100,8 +98,7 @@ const IconRight = styled(ArrowForwardIosIcon)(({ theme }) => {
   };
 });
 
-
-const FirstText = styled(Typography)(({theme})=>{
+const FirstText = styled(Typography)(({ theme }) => {
   return {
     zIndex: "11",
     color: theme.palette.text.primary,
@@ -123,9 +120,9 @@ const FirstText = styled(Typography)(({theme})=>{
       width: "500px",
     },
   };
-})
+});
 
-const SecondText = styled(Typography)(({theme})=>{
+const SecondText = styled(Typography)(({ theme }) => {
   return {
     zIndex: "11",
     color: theme.palette.text.primary,
@@ -149,21 +146,11 @@ const SecondText = styled(Typography)(({theme})=>{
       top: "40%",
     },
   };
-})
-export const sliderStyle = makeStyles((theme) => {
-  return {
-
-    secondText: {
-     
-    },
-  };
 });
+
 const Slider = ({ dataSlider }) => {
   const [current, setCurrent] = useState(0);
   const length = dataSlider.length;
-  // call class
-  const useStyle = sliderStyle();
-
   // next slide
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -192,21 +179,13 @@ const Slider = ({ dataSlider }) => {
                 <ImgSlider src={value.url} alt={value.alt} />
                 {/* first text */}
                 {value.firstText && (
-                  <FirstText
-                    component="p"
-                    variant="p"
-                  
-                  >
+                  <FirstText component="p" variant="p">
                     {value.firstText}
                   </FirstText>
                 )}
                 {/* second text */}
                 {value.secondText && (
-                  <SecondText
-                    component="p"
-                    variant="p"
-                  
-                  >
+                  <SecondText component="p" variant="p">
                     {value.secondText}
                   </SecondText>
                 )}
@@ -218,11 +197,7 @@ const Slider = ({ dataSlider }) => {
       <Dot Info={{ dataSlider, current }} />
       {/* icon next */}
       <ContainerArrowRight>
-        <IconRight
-          
-          onClick={nextSlide}
-          fontSize="large"
-        />
+        <IconRight  onClick={nextSlide} fontSize="large" />
       </ContainerArrowRight>
     </ContainerSlider>
   );
