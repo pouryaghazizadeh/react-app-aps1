@@ -5,7 +5,6 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
 import footerData from "../../constants/footer.json";
 import Buttons from "../button/Button";
 
@@ -145,7 +144,7 @@ const TextIcons = styled(Typography)(({ theme }) => {
     },
   };
 });
-const  TextCopyright = styled(Typography)(({theme})=>{
+const TextCopyright = styled(Typography)(({ theme }) => {
   return {
     position: "absolute",
     bottom: "10px",
@@ -159,21 +158,20 @@ const  TextCopyright = styled(Typography)(({theme})=>{
       fontSize: "1.5rem",
     },
   };
-})
-
+});
 
 const Footer = () => {
-
   return (
     <ContainerFooter component="footer">
       {/* get information about location and phone number */}
       <ContainerInformation component="section">
         {/* box get title */}
         <BoxTitle component="section">
-          {footerData.information.map((value, i) => {
+          {footerData.information.map((value, index) => {
+            console.log(index);
             return (
               <>
-                <TitleStyle key={i} component="p" variant="p">
+                <TitleStyle component="p" variant="p">
                   {value.title}
                 </TitleStyle>
               </>
@@ -239,11 +237,7 @@ const Footer = () => {
         })}
       </ContainerIcon>
       {/* copy right text */}
-      <TextCopyright
-        component="section"
-        variant="section"
-        
-      >
+      <TextCopyright component="section" variant="section">
         {footerData.copyRight}
       </TextCopyright>
     </ContainerFooter>

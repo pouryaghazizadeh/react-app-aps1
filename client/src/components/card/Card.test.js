@@ -10,7 +10,7 @@ test("render cards", () => {
   render(<Cards Info={mock} />);
 });
 test("check the img", () => {
-  render(<Cards Info={mock} />);
+ const {getByAltText}= render(<Cards Info={mock} />);
   const img = screen.getByAltText("Full-Stack");
   expect(img).toHaveAttribute("src", "../images/p.jpg");
   expect(img).toHaveAttribute("alt", "Full-Stack");

@@ -1,17 +1,8 @@
 
-import Dot from "./Dot"
-import { ThemeProvider } from "@mui/private-theming";
-import theme from "../../constants/theme";
-import dataSliders from "../../constants/slider.json"
-import { shallow } from "enzyme";
-
- const dataSlider = {
-   dataSliders,
- };
-test("render Dot",()=>{
-     shallow(
-       <ThemeProvider theme={theme}>
-         <Dot Info={dataSlider} />
-       </ThemeProvider>
-     );
-})
+import Dot from "./Dot";
+import { render } from "@testing-library/react";
+const current=0
+const mock = [{id:1},{id:2}]
+test("render Dot", () => {
+  render(<Dot Info={{ current, mock }} />);
+});

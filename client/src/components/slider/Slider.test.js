@@ -1,20 +1,32 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import dataSlider from "../../constants/slider.json";
+import "@testing-library/jest-dom/extend-expect";
+import { render, screen } from "@testing-library/react";
 import Slider from "./Slider";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// this is mock data
+const mock = {
+  id: 2,
+  firstText: "hi",
+  secondText: "bye",
+  alt: "image2",
+  url: "https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+};
+
 test("render slider", () => {
-  render(<Slider dataSlider={dataSlider} />);
+  render(<Slider dataSlider={mock} />);
 });
-
-test("check next button", () => {
-  render(<Slider dataSlider={dataSlider} />);
-  const current = 0;
-  const length = dataSlider.secondData;
-  const nextArrow = screen.getByRole("", {
-    name: <ArrowForwardIosIcon/>,
-  });
-
-  fireEvent.click(nextArrow);
-
+test("check the img", () => {
+  const { getByAltText } = render(<Slider dataSlider={mock} />);
+  const img = screen.getByAltText("image2");
+  expect(img).toHaveAttribute(
+    "src",
+    "https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
+  );
+  expect(img).toHaveAttribute("alt", "image2");
 });
+// test("check next button", () => {
+//   render(<Slider dataSlider={mock} />);
+//   const nextArrow = screen.getByRole("", {
+//     name: <ArrowForwardIosIcon />,
+//   });
+
+//   fireEvent.click(nextArrow);
+// });
