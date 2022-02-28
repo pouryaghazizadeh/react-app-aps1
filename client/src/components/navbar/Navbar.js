@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useContext, useState } from "react";
-import headerData from "../../constants/headerData.json";
 import { ColorModeContext } from "../../helper/modeColorContext";
 import Buttons from "../button/Button";
 
@@ -74,9 +73,10 @@ const Line = styled(Box)(({ theme }) => {
   };
 });
 
-const Navbar = () => {
+const Navbar = ({ Info }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { mood, setMood } = useContext(ColorModeContext);
+  const { headerData } = Info;
 
   // function handle mode
   const toggleColorMode = () => {

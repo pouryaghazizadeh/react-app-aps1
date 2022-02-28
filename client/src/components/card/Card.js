@@ -47,7 +47,6 @@ const Cards = ({ Info }) => {
     titleCard,
     descriptionCard,
     fontWeightCard,
-    styleTitleCard,
   } = Info;
 
   return (
@@ -59,14 +58,13 @@ const Cards = ({ Info }) => {
         alt={titleCard && titleCard}
       />
       <ContainerTitle
-      //  className={useStyle.containerText}
+    
       >
         {titleCard && (
           <TitleCard
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
-            // className={useStyle.title}
-            sx={styleTitleCard && styleTitleCard}
+     
           >
             {titleCard}
           </TitleCard>

@@ -1,65 +1,66 @@
 import { Box, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 import Cards from "../../components/card/Card";
 import Slider from "../../components/slider/Slider";
 import dataCards from "../../constants/card.json";
 import dataSlider from "../../constants/slider.json";
-export const homeStyle = makeStyles((theme) => {
-  return {
-    containerPage: {
-      background: theme.palette.background.paper,
-      height: "100%",
-      paddingBottom: "500px",
-    },
-    containerSlider: {
-      height: "650px",
-      width: "100%",
-      marginTop: "3px",
-    },
-    titleCard: {
-      width: "100%",
-      textAlign: "center",
-      color: theme.palette.text.primary,
-      marginTop: "40px",
-    },
-    containerCards: {
-      display: "flex",
-      flexWrap: "wrap",
-      width: "100%",
-      gap: "10px",
 
-      [theme.breakpoints.up("xs")]: {
-        justifyContent: "center",
-        padding: "0",
-      },
-      [theme.breakpoints.up("sm")]: {
-        padding: "0px 10px 0px 10px",
-      },
-      [theme.breakpoints.up("md")]: {
-        padding: "0px 15px 0px 15px",
-        marginTop: "300px",
-      },
+const ContainerPage = styled(Box)(({ theme }) => {
+  return {
+    background: theme.palette.background.paper,
+    height: "100%",
+    paddingBottom: "500px",
+  };
+});
+
+const ContainerSlider = styled(Box)(() => {
+  return {
+    height: "650px",
+    width: "100%",
+    marginTop: "3px",
+  };
+});
+const TitleCard = styled(Typography)(() => {
+  return {
+    height: "650px",
+    width: "100%",
+    marginTop: "3px",
+  };
+});
+
+const ContainerCards = styled(Box)(({ theme }) => {
+  return {
+    display: "flex",
+    flexWrap: "wrap",
+    width: "100%",
+    gap: "10px",
+
+    [theme.breakpoints.up("xs")]: {
+      justifyContent: "center",
+      padding: "0",
+    },
+    [theme.breakpoints.up("sm")]: {
+      padding: "0px 10px 0px 10px",
+    },
+    [theme.breakpoints.up("md")]: {
+      padding: "0px 15px 0px 15px",
+      marginTop: "300px",
     },
   };
 });
+
 const Home = () => {
-  const useStyles = homeStyle();
   return (
-    <Box component="main" variant="div" className={useStyles.containerPage}>
+    <ContainerPage component="main" variant="div">
       {/* slider container */}
-      <Box className={useStyles.containerSlider}>
+      <ContainerSlider>
         <Slider dataSlider={dataSlider.secondData} />
-      </Box>
+      </ContainerSlider>
       {/* cards container */}
-      <Box component="section" className={useStyles.containerCards}>
-        <Typography
-          component="h3"
-          variant="h2"
-          className={useStyles.titleCard}
-          sx={{ marginBottom: "25px" }}
-        >
+      <ContainerCards component="section">
+        <TitleCard component="h3" variant="h2" sx={{ marginBottom: "25px" }}>
           {dataCards.title}
-        </Typography>
+        </TitleCard>
 
         {/* cards */}
         {dataCards.cards.map((value, i) => {
@@ -78,8 +79,8 @@ const Home = () => {
             />
           );
         })}
-      </Box>
-    </Box>
+      </ContainerCards>
+    </ContainerPage>
   );
 };
 

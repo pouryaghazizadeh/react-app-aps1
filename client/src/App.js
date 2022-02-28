@@ -7,6 +7,7 @@ import { ColorModeContext } from "./helper/modeColorContext";
 import About from "./page/about/About";
 import Home from "./page/home/Home";
 import { darkTheme, lightTheme } from "./theme/theme";
+import headerData from "./constants/headerData.json";
 const App = () => {
   const [mood, setMood] = useState("light");
 
@@ -14,10 +15,10 @@ const App = () => {
     <div className="App">
       <ColorModeContext.Provider value={{ mood, setMood }}>
         <ThemeProvider theme={mood === "light" ? lightTheme : darkTheme}>
-          <Navbar  />
+          <Navbar Info={{headerData}} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About/>}/>
+            <Route path="/about-us" element={<About />} />
           </Routes>
           <Footer />
         </ThemeProvider>

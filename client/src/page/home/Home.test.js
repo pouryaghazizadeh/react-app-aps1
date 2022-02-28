@@ -1,11 +1,5 @@
-import { ThemeProvider } from "@mui/private-theming";
-import  {render ,screen}from "@testing-library/react"
-import theme from "../../theme/lightTheme";
+import { render } from "@testing-library/react";
 import Home from "./Home";
 test("render Home", () => {
- render.screen(
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
-  );
+  render(<Home />);
 });
