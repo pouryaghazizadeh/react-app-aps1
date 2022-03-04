@@ -4,6 +4,8 @@ import { Link as RouterLink, NavLink as RouterNavLink } from "react-router-dom";
 
 const Buttons = styled(
   Button
+
+
   //* to get props use this method
   //   , {
   //   shouldForwardProp: (prop) =>
@@ -16,6 +18,8 @@ const Buttons = styled(
   //     props.color === "secondary" && styles.secondary,
   //   ],
   // }
+
+
 )(({ theme }) => {
   return {
     textTransform: "none",
@@ -44,7 +48,6 @@ const ButtonComponent = ({ buttonInfo }) => {
 
   return (
     <Buttons
-      data-testid="button"
       disableRipple={rippleStyleButton ? true : false}
       component={
         typeButton.Link
@@ -55,7 +58,7 @@ const ButtonComponent = ({ buttonInfo }) => {
           ? "button"
           : "button"
       }
-      href={url ? url : null}
+      href={url && url}
       
       // eslint-disable-next-line no-mixed-operators
       to={typeButton.Link || typeButton.NavLink &&routeButton }

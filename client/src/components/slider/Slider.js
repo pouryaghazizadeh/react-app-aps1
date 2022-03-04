@@ -148,6 +148,7 @@ const SecondText = styled(Typography)(({ theme }) => {
   };
 });
 
+// Slider component
 const Slider = ({ dataSlider }) => {
   const [current, setCurrent] = useState(0);
   const length = dataSlider.length;
