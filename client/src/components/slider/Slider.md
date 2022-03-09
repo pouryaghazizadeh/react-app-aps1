@@ -5,7 +5,7 @@
 
 ### `data`
 
-```bash
+```js
 {
   id:Number,
   url:String,

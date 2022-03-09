@@ -1,13 +1,14 @@
 import { ThemeProvider } from "@mui/material/styles";
+import { darkTheme, lightTheme } from "./theme/theme";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
+import headerData from "./constants/headerData.json";
 import { ColorModeContext } from "./helper/modeColorContext";
 import About from "./page/about/About";
+import aboutData from "./constants/about.json"
 import Home from "./page/home/Home";
-import { darkTheme, lightTheme } from "./theme/theme";
-import headerData from "./constants/headerData.json";
 const App = () => {
   const [mood, setMood] = useState("light");
 
@@ -15,10 +16,10 @@ const App = () => {
     <div className="App">
       <ColorModeContext.Provider value={{ mood, setMood }}>
         <ThemeProvider theme={mood === "light" ? lightTheme : darkTheme}>
-          <Navbar Info={{headerData}} />
+          <Navbar Info={{ headerData }} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About />} />
+            <Route path="/about-us" element={<About dataAbout={aboutData} />} />
           </Routes>
           <Footer />
         </ThemeProvider>
