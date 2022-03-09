@@ -1,26 +1,6 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-// export const cardStyle = makeStyles((theme) => {
-//   return {
-//     containerPage: {
-//       // border: `1px solid ${theme.palette.text.icon}`,
-//       width: "300px",
-//       height: "400px",
-//       margin: "5px",
-//       textAlign: "center",
-//     },
-//     title: {
-//       color: theme.palette.text.primary,
-//     },
-//     containerText: {
-//       background: theme.palette.background.default,
-
-//       height: "100%",
-//     },
-//   };
-// });
-
-const ContainerCard = styled(Card)(({ theme }) => {
+const ContainerCard = styled(Card)(() => {
   return {
     width: "300px",
     height: "400px",
@@ -41,6 +21,8 @@ const TitleCard = styled(Typography)(({ theme }) => {
     color: theme.palette.text.primary,
   };
 });
+
+// card component
 const Cards = ({ Info }) => {
   const {
     imageUrl,
@@ -58,13 +40,11 @@ const Cards = ({ Info }) => {
         alt={titleCard && titleCard}
       />
       <ContainerTitle
-    
       >
         {titleCard && (
           <TitleCard
             component="h4"
             fontWeight={fontWeightCard && fontWeightCard}
-     
           >
             {titleCard}
           </TitleCard>

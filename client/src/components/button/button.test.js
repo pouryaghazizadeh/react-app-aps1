@@ -7,7 +7,6 @@ const mockData = {
   typeButton: {
     Button: "button",
   },
-
   nameButton: "click",
 };
 

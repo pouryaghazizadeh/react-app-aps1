@@ -22,6 +22,7 @@ test("check the img", () => {
   );
   expect(img).toHaveAttribute("alt", "image2");
 });
+
 // test("check next button", () => {
 //   render(<Slider dataSlider={mock} />);
 //   const nextArrow = screen.getByRole("", {
@@ -30,3 +31,8 @@ test("check the img", () => {
 
 //   fireEvent.click(nextArrow);
 // });
+
+   
+   
+    
+    

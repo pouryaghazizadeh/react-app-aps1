@@ -1,0 +1,20 @@
+{
+  "mission-statement": "mission-statement",
+  "strategicPlan": {
+    "title": "strategic plan",
+    "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure libero atque aspernatur asperiores animi labore eaque illum eveniet adipisci incidunt?"
+  },
+
+  "ourValue": {
+    "title": "Our Value",
+    "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure libero atque aspernatur asperiores animi labore eaque illum eveniet adipisci incidunt?"
+  },
+  "howWeFindAPS": {
+    "title": "How we find APS",
+    "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure libero atque aspernatur asperiores animi labore eaque illum eveniet adipisci incidunt?"
+  },
+  "howToJoinAPS": {
+    "title": "How to join APS",
+    "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure libero atque aspernatur asperiores animi labore eaque illum eveniet adipisci incidunt?"
+  }
+}

@@ -168,7 +168,7 @@ const Footer = () => {
         {/* box get title */}
         <BoxTitle component="section">
           {footerData.information.map((value, index) => {
-            console.log(index);
+       
             return (
               <>
                 <TitleStyle component="p" variant="p">
