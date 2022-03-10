@@ -7,7 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import headerData from "./constants/headerData.json";
 import { ColorModeContext } from "./helper/modeColorContext";
 import About from "./page/about/About";
-import aboutData from "./constants/about.json"
+
 import Home from "./page/home/Home";
 const App = () => {
   const [mood, setMood] = useState("light");
@@ -19,7 +19,7 @@ const App = () => {
           <Navbar Info={{ headerData }} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About dataAbout={aboutData} />} />
+            <Route path="/about-us"  element={<About />} />
           </Routes>
           <Footer />
         </ThemeProvider>

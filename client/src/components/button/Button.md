@@ -112,10 +112,10 @@
 
 ## icon component inside button component composed a box and inside them contain IconButton component.
 
-```bash
+```js
 <Box >
     <IconButton>
-        {iconInfo.icon}#this is your icon
+        {iconInfo.icon} //this is your icon
     </IconButton>
 </Box>
 
