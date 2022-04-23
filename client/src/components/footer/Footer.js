@@ -25,6 +25,9 @@ const ContainerFooter = styled(Box)(({ theme }) => {
   };
 });
 
+
+
+
 const ContainerInformation = styled(Box)(({ theme }) => {
   return {
     position: "relative",
@@ -40,6 +43,14 @@ const ContainerInformation = styled(Box)(({ theme }) => {
     },
   };
 });
+
+
+
+
+
+
+
+
 const BoxTitle = styled(Box)(({ theme }) => {
   return {
     position: "absolute",

@@ -10,6 +10,7 @@ const mockData = {
   nameButton: "click",
 };
 
+
 test("render Button component", () => {
   render(
     <BrowserRouter>
@@ -27,3 +28,4 @@ test("check the name", () => {
   const Btn = screen.getByRole("button");
   expect(Btn.textContent).toBe("click");
 });
+

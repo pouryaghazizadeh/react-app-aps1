@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import { lazy } from "react";
 import { styled } from "@mui/material/styles";
-import Cards from "../../components/card/Card";
-import Slider from "../../components/slider/Slider";
+// import Cards from "../../components/card/Card";
+// import Slider from "../../components/slider/Slider";
 import dataCards from "../../constants/card.json";
 import dataSlider from "../../constants/slider.json";
-
+const Slider = lazy(() => import("../../components/slider/Slider"));
+const Cards = lazy(() => import("../../components/card/Card"));
 const ContainerPage = styled(Box)(({ theme }) => {
   return {
     background: theme.palette.background.paper,

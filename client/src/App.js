@@ -1,30 +1,30 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { darkTheme, lightTheme } from "./theme/theme";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
-import headerData from "./constants/headerData.json";
 import { ColorModeContext } from "./helper/modeColorContext";
-import About from "./page/about/About";
+import { darkTheme, lightTheme } from "./theme/theme";
 
-import Home from "./page/home/Home";
+const Home = lazy(() => import("./page/home/Home"));
+const About = lazy(() => import("./page/about/About"));
+const Navbar = lazy(() => import("./components/navbar/Navbar"));
+const Footer = lazy(() => import("./components/footer/Footer"));
+
 const App = () => {
   const [mood, setMood] = useState("light");
 
   return (
-    <div className="App">
+    <Suspense fallback={<div>Loading...</div>}>
       <ColorModeContext.Provider value={{ mood, setMood }}>
         <ThemeProvider theme={mood === "light" ? lightTheme : darkTheme}>
-          <Navbar Info={{ headerData }} />
+          {/* <Navbar Info={{ headerData }} /> */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-us"  element={<About />} />
+            <Route path="/about-us" element={<About />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </ColorModeContext.Provider>
-    </div>
+    </Suspense>
   );
 };
 

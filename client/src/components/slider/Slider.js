@@ -177,7 +177,8 @@ const Slider = ({ dataSlider }) => {
           <ContainerImg component="div" key={value.id}>
             {index === current && (
               <>
-                <ImgSlider src={value.url} alt={value.alt} />
+              {/* imges */}
+                {/* <ImgSlider src={value.url} alt={value.alt?value.alt:index} loading="lazy" /> */}
                 {/* first text */}
                 {value.firstText && (
                   <FirstText component="p" variant="p">

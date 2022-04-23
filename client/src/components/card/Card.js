@@ -1,5 +1,7 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { memo } from "react";
+// const Img =  lazy(()=>import("../Image/Image"))
 const ContainerCard = styled(Card)(() => {
   return {
     width: "300px",
@@ -24,23 +26,20 @@ const TitleCard = styled(Typography)(({ theme }) => {
 
 // card component
 const Cards = ({ Info }) => {
-  const {
-    imageUrl,
-    titleCard,
-    descriptionCard,
-    fontWeightCard,
-  } = Info;
+  const { imageUrl, titleCard, descriptionCard, fontWeightCard } = Info;
 
+  console.log("I am card component");
   return (
     <ContainerCard component="section">
-      <CardMedia
-        component="img"
-        height="180"
+      {/* <Img
+        // loading="lazy"
+        // height="180"
+        // width="100%"
+        debounce={1000}
         src={imageUrl && imageUrl}
         alt={titleCard && titleCard}
-      />
-      <ContainerTitle
-      >
+      /> */}
+      <ContainerTitle>
         {titleCard && (
           <TitleCard
             component="h4"
@@ -55,4 +54,4 @@ const Cards = ({ Info }) => {
   );
 };
 
-export default Cards;
+export default memo(Cards);

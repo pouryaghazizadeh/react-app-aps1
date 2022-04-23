@@ -7,6 +7,7 @@ import {
   Marker,
   ZoomableGroup,
 } from "react-simple-maps";
+import Tooltip from "@mui/material/Tooltip";
 const Map = () => {
   const [content, setContent] = useState("");
   const geoUrl =
@@ -23,13 +24,17 @@ const Map = () => {
   return (
     <div>
       <ComposableMap
-        width={1700}
-        // height={1700}
+        width={1000}
+        // height={1800}
         data-tip=""
         projectionConfig={{ scale: 200 }}
-        // style={{ background: "black" }}
+        style={{
+          width: "100%",
+          height: { sx: "300px", md: "300px" },
+          border: "1px solid black",
+        }}
       >
-        <ZoomableGroup>
+        <ZoomableGroup maxZoom={3}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -76,6 +81,9 @@ const Map = () => {
           </Marker>
         </ZoomableGroup>
       </ComposableMap>
+      <Tooltip>
+        
+      </Tooltip>
     </div>
   );
 };

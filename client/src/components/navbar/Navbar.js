@@ -1,6 +1,7 @@
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuIcon from "@mui/icons-material/Menu";
+import Img from "react-cool-img";
 import {
   AppBar,
   Box,
@@ -8,6 +9,7 @@ import {
   Menu,
   MenuItem,
   Toolbar,
+  TextField
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useContext, useState } from "react";
@@ -19,7 +21,7 @@ const Header = styled(AppBar)(({ theme }) => {
     background: theme.palette.background.secondary,
   };
 });
-const Logo = styled("img")(({ theme }) => {
+const Logo = styled(Img)(({ theme }) => {
   return {
     height: "60px",
     width: "70px",
@@ -96,11 +98,14 @@ const Navbar = ({ Info }) => {
     <>
       <Header enableColorOnDark color="inherit" position="sticky">
         <FirstNav component="nav" variant="div">
+
           <Box flexGrow={1}>
-            <Logo
+            {/* <Logo
               src={headerData.logoWebsite.srcLogo}
               alt={headerData.logoWebsite.alt}
-            />
+              loading="lazy"
+
+            /> */}
           </Box>
           {/* button dark mood */}
           <Buttons
